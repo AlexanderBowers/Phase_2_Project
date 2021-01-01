@@ -1,7 +1,7 @@
 <h1>New User Form</h1>
 
 <%if flash[:errors]%>
-    <%=flash[:errors].each do |e|%>
+    <%flash[:errors].each do |e|%>
         <p><%=e%></p>
     <%end%>
 <%end%>
