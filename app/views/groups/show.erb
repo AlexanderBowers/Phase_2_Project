@@ -1,2 +1,13 @@
 <h1>Group Show Page</h1>
-<%=@group.name%>
+<%=@group.name%><br>
+
+<%= button_to 'join group', {controller: "user_groups", action: "create", user_id: session[:user_id], group_id: @group.id}, {method: :post} %>
+
+<%="Party leader is #{@group.users[0].username}"%><br> 
+
+Party is: <br>
+<ul>
+    <%@group.users.uniq.each do |p|%>
+        <li><%=link_to p.username, p%></li>
+    <%end%>
+</ul>
