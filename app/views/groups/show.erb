@@ -5,7 +5,15 @@
 
 <%="Party leader is #{@group.users[0].username}"%><br> 
 
-Party is: <br>
+
+<h5>This group will be tackling:</h5> <br>
+<ul>
+        <%@group.raids.each do |r|%>
+            <li><%=link_to r.name, r%></li>
+        <%end%>
+</ul>
+
+<br>Party is: <br>
 <ul>
     <%@group.users.uniq.each do |p|%>
         <li><%=link_to p.username, p%></li>

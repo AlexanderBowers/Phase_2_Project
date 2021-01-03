@@ -6,7 +6,7 @@ and Alexander Bowers
 
 	Raid
 	 v
-     | raid/group
+   | raid/group
 	 ^
 User>--<Group--<Role			leader id on group -> user_id of first user
      ^
@@ -46,3 +46,33 @@ user can create groups
 if raid group is finished, add +1 to raid count on user
 user with most raids
 leaderboard
+
+
+
+
+What's been done as of 1/2/2021
+
+Users can create accounts
+Users can log into accounts
+Users can see a list of existing groups
+Users can create a group
+Users can join an existing group
+Users can create raids
+Users can attach raids to groups
+
+What needs to be done:
+
+Party lead able to remove people from group
+User can leave a group
+If party leader leaves, delete group
+Party limit for group
+Create Roles
+Optional role caps for group
+Show taken and open roles on group's page
+if a raid's party is full,
+give party leader ability to press 'finish' on group page
+if 'finished'
+show name of raid and a counter on user's page.
+Remove raid from groups#index
+
+leaderboard for raid completions?

@@ -3,5 +3,7 @@
 <%=form_for @group do |f|%>
     <%=f.label :name%>
     <%=f.text_field :name%>
+    <%=f.collection_check_boxes :raids, @raids, :id, :name, include_hidden: false%>
+    <%=link_to "raid not listed? click here!", new_raid_path%>    
     <%=f.submit%>
 <%end%>

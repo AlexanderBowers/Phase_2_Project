@@ -1,0 +1,2 @@
+class GroupRaidsController < ApplicationController
+end
