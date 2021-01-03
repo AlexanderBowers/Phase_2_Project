@@ -69,6 +69,8 @@ Party limit for group
 Create Roles
 Optional role caps for group
 Show taken and open roles on group's page
+Adding drops to raids; showing drops on users profiles
+
 if a raid's party is full,
 give party leader ability to press 'finish' on group page
 if 'finished'
