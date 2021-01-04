@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2021_01_04_023730) do
 
   create_table "raids", force: :cascade do |t|
     t.string "name"
+    t.string "reward_item_1"
+    t.string "reward_item_2"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

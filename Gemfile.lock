@@ -63,6 +63,9 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     bcrypt (3.1.12)
+    bcrypt (3.1.12-java)
+    bcrypt (3.1.12-x64-mingw32)
+    bcrypt (3.1.12-x86-mingw32)
     bindex (0.8.1)
     bootsnap (1.5.1)
       msgpack (~> 1.0)
@@ -82,6 +85,8 @@ GEM
     concurrent-ruby (1.1.7)
     crass (1.0.6)
     erubi (1.10.0)
+    faker (2.15.1)
+      i18n (>= 1.6, < 2)
     ffi (1.14.2)
     ffi (1.14.2-java)
     ffi (1.14.2-x64-mingw32)
@@ -233,6 +238,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  faker
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)
