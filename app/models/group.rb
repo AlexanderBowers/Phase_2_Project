@@ -8,4 +8,9 @@ class Group < ApplicationRecord
     has_many :user_group_roles
     has_many :roles, through: :user_group_roles
 
+
+    def party_leader
+        self.user_groups.all[0].user.username
+    end
+
 end
