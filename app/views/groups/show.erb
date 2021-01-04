@@ -1,25 +1,27 @@
-<h1>Group Show Page</h1>
-<%=@group.name%><br>
-
-<%= button_to 'join group', {controller: "user_groups", action: "create", user_id: session[:user_id], group_id: @group.id}, {method: :post} %>
+<br>
+<h2><%=@group.name%><br></h2>
 
 
-<%="Party leader is #{@group.users[0].username}"%><br> 
+<%= button_to 'join as tank', {controller: "user_group_roles", action: "create", role_id: "1", user_id: session[:user_id], group_id: @group.id}%>
+<%= button_to 'join as dps', {controller: "user_group_roles", action: "create", role_id: "2", user_id: session[:user_id], group_id: @group.id}%>
+<%= button_to 'join as healer', {controller: "user_group_roles", action: "create", role_id: "3", user_id: session[:user_id], group_id: @group.id}%>
+<%="Party leader is:"%> <strong><%= "#{@group.users[0].username}"%></strong><br> 
 
 
-<h5>This group will be tackling:</h5> <br>
+<h5>This group will be tackling:</h5>
 <ul>
         <%@group.raids.each do |r|%>
             <li><%=link_to r.name, r%></li>
         <%end%>
 </ul>
 
-<br>Party is: <br>
+<h4>Roles are: </h4>
 <ul>
-    <%@group.users.uniq.each do |p|%>
-        <li><%=link_to p.username, p%></li>
+    <%@group.user_group_roles.each do |r|%>
+    <li><%="#{r.role.name}: #{r.user.username}"%></li>
     <%end%>
 </ul>
+
 
 
     
