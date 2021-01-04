@@ -3,6 +3,7 @@
 
 <%= button_to 'join group', {controller: "user_groups", action: "create", user_id: session[:user_id], group_id: @group.id}, {method: :post} %>
 
+
 <%="Party leader is #{@group.users[0].username}"%><br> 
 
 
@@ -19,3 +20,6 @@
         <li><%=link_to p.username, p%></li>
     <%end%>
 </ul>
+
+
+    

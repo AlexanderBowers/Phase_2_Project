@@ -5,4 +5,6 @@ class User < ApplicationRecord
 
     has_many :user_groups
     has_many :groups, through: :user_groups
+    has_many :user_roles
+    has_many :roles, through: :user_roles
 end
