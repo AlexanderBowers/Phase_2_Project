@@ -10,18 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_04_022426) do
+ActiveRecord::Schema.define(version: 2021_01_04_023730) do
 
   create_table "group_raids", force: :cascade do |t|
     t.integer "group_id"
     t.integer "raid_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "group_roles", force: :cascade do |t|
-    t.integer "group_id"
-    t.integer "role_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -40,8 +33,14 @@ ActiveRecord::Schema.define(version: 2021_01_04_022426) do
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
-    t.integer "group_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_group_roles", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "group_id"
+    t.integer "role_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -49,13 +48,6 @@ ActiveRecord::Schema.define(version: 2021_01_04_022426) do
   create_table "user_groups", force: :cascade do |t|
     t.integer "user_id"
     t.integer "group_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "user_roles", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "role_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

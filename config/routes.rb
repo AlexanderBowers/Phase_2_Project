@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_group_roles
   resources :roles
   resources :group_raids
   resources :user_groups
