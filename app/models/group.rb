@@ -17,13 +17,10 @@ class Group < ApplicationRecord
         party = {tank: [], dps: [], healer: []}
         self.user_group_roles.each do |r|
             if r.role_id == 1
-                byebug
                 party[:tank] << r.user.username.to_s
             elsif r.role_id == 2
-                byebug
                 party[:dps] << r.user.username.to_s
             elsif r.role_id == 3
-                byebug
                 party[:healer] << r.user.username.to_s 
             end
         end
