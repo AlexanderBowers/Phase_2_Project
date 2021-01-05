@@ -2,13 +2,17 @@
 <h2><%=@group.name%><br></h2>
 
 
-<%= button_to 'join as tank', {controller: "user_group_roles", action: "create", role_id: "1", user_id: session[:user_id], group_id: @group.id}%>
-<%= button_to 'join as dps', {controller: "user_group_roles", action: "create", role_id: "2", user_id: session[:user_id], group_id: @group.id}%>
-<%= button_to 'join as healer', {controller: "user_group_roles", action: "create", role_id: "3", user_id: session[:user_id], group_id: @group.id}%>
-<%="Party leader is:"%> <strong><%= "#{@group.party_leader}"%></strong><br> 
+<%if @group.party_size.length < @group.limit%>
+    <%= button_to 'join as tank', {controller: "user_group_roles", action: "create", role_id: "1", user_id: session[:user_id], group_id: @group.id}%>
+    <%= button_to 'join as dps', {controller: "user_group_roles", action: "create", role_id: "2", user_id: session[:user_id], group_id: @group.id}%>
+    <%= button_to 'join as healer', {controller: "user_group_roles", action: "create", role_id: "3", user_id: session[:user_id], group_id: @group.id}%>
+<%end%>
+<%="Party leader is:"%> <strong><%= "#{@group.party_leader.username}"%></strong><br> 
+<br>
+<strong><%="#{@group.available_spots}"%></strong><br><br>
 
 
-<h5>This group will be tackling:</h5>
+<strong>This group will be tackling:</strong>
 <ul>
         <%@group.raids.each do |r|%>
             <li><%=link_to r.name, r%></li>
@@ -23,7 +27,8 @@
 </ul>
 
 
-<%= "party is #{@group.party}"%>
+<%= "party is #{@group.party}"%><br>
+
 
 <%=link_to "Logout", logout_path%>
 

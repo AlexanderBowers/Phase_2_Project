@@ -50,7 +50,7 @@ leaderboard
 
 
 
-What's been done as of 1/3/2021
+What's been done as of 1/4/2021
 
 Users can create accounts
 Users can log into accounts
@@ -60,6 +60,7 @@ Users can join an existing group
 Users can create raids
 Users can attach raids to groups
 Users can choose roles
+User can logout
 
 What needs to be done:
 
@@ -82,4 +83,22 @@ Remove raid from groups#index
 
 leaderboard for raid completions?
 
+
+to do for today
+
+alex
+party leader can delete members
+if party leader leaves delete group
+party leader can decide group is full
+
+
+riley
+adding items to raids - faker list?
+flesh out user - profile picture, contact info, etc
+add groups to user profile
+
+
+
+
+remove from index; display on user's profile
 

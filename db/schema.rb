@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_04_023730) do
+ActiveRecord::Schema.define(version: 2021_01_04_185752) do
 
   create_table "group_raids", force: :cascade do |t|
     t.integer "group_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_01_04_023730) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "limit"
   end
 
   create_table "raids", force: :cascade do |t|

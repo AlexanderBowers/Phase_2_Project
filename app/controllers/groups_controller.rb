@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+    before_action :logged_in
+
     def index
         @groups = Group.all
     end
@@ -9,21 +11,28 @@ class GroupsController < ApplicationController
 
     def new
         @raids = Raid.all
+        @limit = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         @group = Group.new 
     end
 
     def create
         @raids = Raid.all
         @group = Group.create(group_params)
-        create_user_group
-        create_group_raids
-        redirect_to @group
+        if @group.valid?
+            create_user_group
+            create_group_raids
+            redirect_to @group
+        else
+            flash[:errors] = @group.errors.full_messages
+            render new_group_path
+        end
+        
     end
 
 
     private
     def group_params
-        params.require(:group).permit(:name, :raids)
+        params.require(:group).permit(:name, :raids, :limit)
     end
 
     def create_user_group
