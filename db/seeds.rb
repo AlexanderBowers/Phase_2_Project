@@ -5,19 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
 
 User.delete_all
 Group.delete_all
@@ -39,11 +26,6 @@ r3 = Raid.create(name: 'Attack on ' + Faker::Games::ElderScrolls.city, reward_it
 
 ug1 = UserGroup.create(user_id: 1, group_id: 2)
 
-
-=======
-
-
-    Role.create(name: "tank")
-    Role.create(name: "dps")
-    Role.create(name: "healer")
->>>>>>> origin/master
+Role.create(name: "tank")
+Role.create(name: "dps")
+Role.create(name: "healer")

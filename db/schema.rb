@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_04_185752) do
+ActiveRecord::Schema.define(version: 2021_01_05_180209) do
 
   create_table "group_raids", force: :cascade do |t|
     t.integer "group_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_01_04_185752) do
     t.string "name"
     t.string "reward_item_1"
     t.string "reward_item_2"
+    t.boolean "completed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_01_04_185752) do
     t.string "username"
     t.string "pix_url"
     t.string "email"
+    t.string "inventory"
     t.string "discord_name"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false

@@ -1,37 +1,38 @@
-<br>
-<h2><%=@group.name%><br></h2>
+<div>
+    <br>
+    <h2><%=@group.name%><br></h2>
 
 
-<%if @group.party_size.length < @group.limit%>
-    <%= button_to 'join as tank', {controller: "user_group_roles", action: "create", role_id: "1", user_id: session[:user_id], group_id: @group.id}%>
-    <%= button_to 'join as dps', {controller: "user_group_roles", action: "create", role_id: "2", user_id: session[:user_id], group_id: @group.id}%>
-    <%= button_to 'join as healer', {controller: "user_group_roles", action: "create", role_id: "3", user_id: session[:user_id], group_id: @group.id}%>
-<%end%>
-<%="Party leader is:"%> <strong><%= "#{@group.party_leader.username}"%></strong><br> 
-<br>
-<strong><%="#{@group.available_spots}"%></strong><br><br>
-
-
-<strong>This group will be tackling:</strong>
-<ul>
-        <%@group.raids.each do |r|%>
-            <li><%=link_to r.name, r%></li>
-        <%end%>
-</ul>
-
-<h4>Roles are: </h4>
-<ul>
-    <%@group.user_group_roles.each do |r|%>
-    <li><%="#{r.role.name}: #{r.user.username}"%></li>
+    <%if @group.party_size.length < @group.limit%>
+        <%= button_to 'join as tank', {controller: "user_group_roles", action: "create", role_id: "1", user_id: session[:user_id], group_id: @group.id}%>
+        <%= button_to 'join as dps', {controller: "user_group_roles", action: "create", role_id: "2", user_id: session[:user_id], group_id: @group.id}%>
+        <%= button_to 'join as healer', {controller: "user_group_roles", action: "create", role_id: "3", user_id: session[:user_id], group_id: @group.id}%>
     <%end%>
-</ul>
+    <%="Party leader is:"%> <strong><%= "#{@group.party_leader.username}"%></strong><br> 
+    <br>
+    <strong><%="#{@group.available_spots}"%></strong><br><br>
 
 
-<%= "party is #{@group.party}"%><br>
+    <strong>This group will be tackling:</strong>
+    <ul>
+            <%@group.raids.each do |r|%>
+                <li><%=link_to r.name, r%></li>
+            <%end%>
+    </ul>
+
+    <h4>Roles are: </h4>
+    <ul>
+        <%@group.user_group_roles.each do |r|%>
+        <li><%="#{r.role.name}: #{r.user.username}"%></li>
+        <%end%>
+    </ul>
 
 
-<%=link_to "Logout", logout_path%>
+    <p><%= "party is #{@group.party}"%></p><br>
 
+
+    <%=link_to "Logout", logout_path%>
+</div>
 
 
     

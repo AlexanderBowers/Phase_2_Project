@@ -4,6 +4,7 @@ class CreateRaids < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :reward_item_1
       t.string :reward_item_2
+      t.boolean :completed, :default => false
 
       t.timestamps
     end
