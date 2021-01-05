@@ -29,10 +29,9 @@ class GroupsController < ApplicationController
         
     end
 
-    def super_test
+    def finalize
         @group = Group.find(params[:id])
         @group.finish
-        byebug
         redirect_to @group
     end
 

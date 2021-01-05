@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :user_groups
   resources :groups do
     collection do
-      get :super_test
+      get :finalize
     end
   end
   resources :users

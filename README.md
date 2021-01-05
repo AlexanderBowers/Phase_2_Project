@@ -61,13 +61,15 @@ Users can create raids
 Users can attach raids to groups
 Users can choose roles
 User cannot join group if it is full
+User can leave a group
+Party lead able to remove people from group
+Party lead can 'finish' a group
 User can logout
 
 What needs to be done:
 
-Party lead able to remove people from group
-User can leave a group
-If party leader leaves, delete group
+
+
 Optional role caps for group***
 Show taken and open roles on group's page***
  showing drops on users profiles

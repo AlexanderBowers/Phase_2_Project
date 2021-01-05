@@ -1,7 +1,7 @@
 <br>
 <h2><%=@group.name%><br></h2>
 <% if session[:user_id] == @group.party_leader.id %>
-    <%= link_to "Finalize Group", super_test_groups_path(id: @group.id) %><br>
+    <%= link_to "Finalize Group", finalize_groups_path(id: @group.id) %><br>
 <% end %>
 
 <%if @group.finished == true%>
