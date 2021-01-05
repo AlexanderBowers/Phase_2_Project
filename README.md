@@ -50,7 +50,7 @@ leaderboard
 
 
 
-What's been done as of 1/4/2021
+What's been done as of 1/5/2021
 
 Users can create accounts
 Users can log into accounts
@@ -64,6 +64,7 @@ User cannot join group if it is full
 User can leave a group
 Party lead able to remove people from group
 Party lead can 'finish' a group
+Party lead can destroy a group
 User can logout
 
 What needs to be done:
@@ -78,7 +79,6 @@ Analytics page
 MORE METHODS ON MODELS
 
 if a raid's party is full,
-give party leader ability to press 'finish' on group page
 if 'finished'
 show name of raid and a counter on user's page.
 Remove raid from groups#index
