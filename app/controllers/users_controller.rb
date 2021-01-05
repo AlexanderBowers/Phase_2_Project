@@ -7,8 +7,7 @@ class UsersController < ApplicationController
     def create
          @user = User.create(user_params)
         if @user.valid?
-            session[:id] = @user.id
-            redirect_to groups_path
+            redirect_to login_path
         else
             flash[:errors] = @user.errors.full_messages
             render new_user_path

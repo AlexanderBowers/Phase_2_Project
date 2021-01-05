@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :analytics, only: :show
   resources :user_group_roles do
     collection do
       get :decimate
