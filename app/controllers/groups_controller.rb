@@ -38,8 +38,8 @@ class GroupsController < ApplicationController
     def wipe
         @group = Group.find(params[:id])
         @groups = Group.all
-        @group.wipe(user_id: params[:user_id])
-        redirect_to groups_path
+        @group.wipe(user_id: [:user_id])
+        redirect_to groups_pathparams
     end
 
 
