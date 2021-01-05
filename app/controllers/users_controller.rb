@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
 
+    def index
+        @users = User.all
+    end
+
     def new
         @user = User.new
     end
 
     def create
-         @user = User.create(user_params)
+         @user = User.create(user_params.merge(:pix_url => Faker::Avatar.image))
         if @user.valid?
             session[:id] = @user.id
             redirect_to groups_path

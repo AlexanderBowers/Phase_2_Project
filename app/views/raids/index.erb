@@ -1,6 +1,9 @@
-<h1>Raids</h1>
-<ul>
-   <% @raids.each do |raid| %>
-      <li><%= raid[:name] %></li>
-   <% end %>
-</ul>
+<div>
+   <h1>Raids</h1>
+   <ul>
+      <% @raids.each do |raid| %>
+         <li><%= link_to raid[:name], raid_path(raid) %></li>
+      <% end %>
+   </ul>
+   <a href="raids/new">New Raid</a>
+</div>

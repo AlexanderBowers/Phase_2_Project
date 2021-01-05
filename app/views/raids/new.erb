@@ -1,8 +1,8 @@
-<h1>New Raid Form</h1>
-
-
-<%=form_for @raid do |f|%>
-    <%=f.label :name%>
-    <%=f.text_field :name%>
-    <%=f.submit%>
-<%end%>
+<div>
+    <h1>New Raid Form</h1>
+    <%= form_for @raid do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.submit %>
+    <% end %>
+</div>

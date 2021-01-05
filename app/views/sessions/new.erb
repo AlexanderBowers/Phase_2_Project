@@ -1,18 +1,20 @@
 <h1>Returning User Form</h1>
 
-<%if flash[:errors]%>
-    <%flash[:errors].each do |e|%>
-        <p><%=e%></p>
-    <%end%>
-<%end%>
+<div>
+    <% if flash[:errors] %>
+        <% flash[:errors].each do |e| %>
+            <p><%= e %></p>
+        <% end %>
+    <% end %>
 
 
 
-<%=form_tag session[:user] do %>
-    <%=text_field_tag :username, '', placeholder: "username"%>
-    <%=text_field_tag :password, '', placeholder: "password"%>
+    <%= form_tag session[:user] do %>
+        <%= text_field_tag :username, '', placeholder: "username" %>
+        <%= text_field_tag :password, '', placeholder: "password" %>
 
-    <%=submit_tag%>
-<%end%>
+        <%= submit_tag %>
+    <% end %>
 
-<%=link_to "sign_up", signup_url%>
+    <%= link_to "sign_up", signup_url %>
+</div>
