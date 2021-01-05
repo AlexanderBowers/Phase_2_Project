@@ -5,6 +5,8 @@
 <h3>Open Groups:</h3>
 <ul>
     <%@groups.each do |g|%>
-    <li><%=link_to g.name, g%></li>
+        <%if g.party_size.length < g.limit%>
+            <li><%=link_to g.name, g%></li>
+        <%end%>
     <%end%>
 </ul>

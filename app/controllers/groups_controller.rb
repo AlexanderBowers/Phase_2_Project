@@ -29,6 +29,20 @@ class GroupsController < ApplicationController
         
     end
 
+    def finalize
+        @group = Group.find(params[:id])
+        @group.finish
+        redirect_to @group
+    end
+
+    def wipe
+        @group = Group.find(params[:id])
+        @groups = Group.all
+        @group.wipe(user_id: [:user_id])
+        redirect_to groups_pathparams
+    end
+
+
 
     private
     def group_params

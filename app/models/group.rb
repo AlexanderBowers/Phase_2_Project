@@ -44,7 +44,14 @@ class Group < ApplicationRecord
         "There are currently #{self.party_size.length} members.\n #{self.limit - self.party_size.length} spots are available."
     end
 
+    def finish
+        self.finished = true 
+        self.save
+    end
 
-
-
+    def wipe(user_id)
+        UserGroup.where(user_id: user_id, group_id: self.id).destroy_all
+        UserGroupRole.where(group_id: self.id).destroy_all
+        Group.where(id: self.id).destroy_all
+    end
 end

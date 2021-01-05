@@ -50,7 +50,7 @@ leaderboard
 
 
 
-What's been done as of 1/4/2021
+What's been done as of 1/5/2021
 
 Users can create accounts
 Users can log into accounts
@@ -60,45 +60,67 @@ Users can join an existing group
 Users can create raids
 Users can attach raids to groups
 Users can choose roles
+User cannot join group if it is full
+User can leave a group
+Party lead able to remove people from group
+Party lead can 'finish' a group
+Party lead can destroy a group
 User can logout
+Groups that are full do not appear under 'open groups'
 
 What needs to be done:
 
-Party lead able to remove people from group
-User can leave a group
-If party leader leaves, delete group
-Party limit for group***
 Optional role caps for group***
 Show taken and open roles on group's page***
-Adding drops to raids; showing drops on users profiles
+showing drops on users profiles
 Analytics page
 
 MORE METHODS ON MODELS
 
 if a raid's party is full,
-give party leader ability to press 'finish' on group page
 if 'finished'
 show name of raid and a counter on user's page.
 Remove raid from groups#index
 
 leaderboard for raid completions?
 
+possible model methods:
+brainstorming model methods -
+currently have 6, need 20
+
+role -
+counter for tank, dps, and healer
+brings us up to 9
+
+user -
+counter for raids
+counter for roles
+counter for drops
+counter for party lead
+brings us up to 13
+
+
+analytics
+counter for groups made
+counter for users made
+counter for raids made
+counter for raid finished most often
+raid with most tanks
+raid with most dps
+raid with most healers
+counter for user_group_roles
+brings us up to 21
+
+
 
 to do for today
 
 alex
-party leader can delete members
-if party leader leaves delete group
-party leader can decide group is full
+party leader can delete group
 
 
 riley
-adding items to raids - faker list?
-flesh out user - profile picture, contact info, etc
-add groups to user profile
+add groups to user profile 
+add drops to profile
 
-
-
-
-remove from index; display on user's profile
 

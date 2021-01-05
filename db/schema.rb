@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_01_05_180209) do
+=======
+ActiveRecord::Schema.define(version: 2021_01_05_042624) do
+>>>>>>> origin/master
 
   create_table "group_raids", force: :cascade do |t|
     t.integer "group_id"
@@ -24,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_01_05_180209) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "limit"
+    t.boolean "finished"
   end
 
   create_table "raids", force: :cascade do |t|
