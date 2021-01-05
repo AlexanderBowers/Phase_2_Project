@@ -6,7 +6,13 @@
 
    <ul>
       <% @user.groups.each do |group| %>
-         <ul> <%= group.name %> </ul>
+         <li> <%= group.name %> </li>
+      <% end %>
+   </ul>
+
+   <ul>
+      <% @user.inventory.each do |item| %>
+         <li> item </li>
       <% end %>
    </ul>
 

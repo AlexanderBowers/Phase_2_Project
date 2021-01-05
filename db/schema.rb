@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_05_042624) do
+ActiveRecord::Schema.define(version: 2021_01_05_190648) do
 
   create_table "group_raids", force: :cascade do |t|
     t.integer "group_id"
@@ -61,11 +61,11 @@ ActiveRecord::Schema.define(version: 2021_01_05_042624) do
     t.string "username"
     t.string "pix_url"
     t.string "email"
-    t.string "inventory"
     t.string "discord_name"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "inventory", default: "--- []\n"
   end
 
 end
