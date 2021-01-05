@@ -44,6 +44,10 @@ class Group < ApplicationRecord
         "There are currently #{self.party_size.length} members.\n #{self.limit - self.party_size.length} spots are available."
     end
 
+    def finish
+        self.finished = true 
+        self.save
+    end
 
 
 

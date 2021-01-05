@@ -60,6 +60,7 @@ Users can join an existing group
 Users can create raids
 Users can attach raids to groups
 Users can choose roles
+User cannot join group if it is full
 User can logout
 
 What needs to be done:
@@ -67,10 +68,9 @@ What needs to be done:
 Party lead able to remove people from group
 User can leave a group
 If party leader leaves, delete group
-Party limit for group***
 Optional role caps for group***
 Show taken and open roles on group's page***
-Adding drops to raids; showing drops on users profiles
+ showing drops on users profiles
 Analytics page
 
 MORE METHODS ON MODELS

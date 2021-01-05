@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
-  resources :user_group_roles
+  resources :user_group_roles do
+    collection do
+      get :decimate
+    end
+  end
   resources :roles
   resources :group_raids
   resources :user_groups
-  resources :groups
+  resources :groups do
+    collection do
+      get :super_test
+    end
+  end
   resources :users
   resources :raids
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

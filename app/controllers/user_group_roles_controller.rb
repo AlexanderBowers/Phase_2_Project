@@ -9,6 +9,15 @@ class UserGroupRolesController < ApplicationController
     end
 
     def destroy
+        @group = Group.find(params[:group_id])
+        UserGroupRole.all.where(user_id: params[:user_id], group_id: params[:group_id], role_id: params[:role_id]).destroy_all
+        redirect_to @group
+    end
+
+    def decimate
+        @group = Group.find(params[:group_id])
+        UserGroupRole.all.where(user_id: params[:user_id], group_id: params[:group_id], role_id: params[:role_id]).destroy_all
+        redirect_to @group
     end
 
     

@@ -29,6 +29,13 @@ class GroupsController < ApplicationController
         
     end
 
+    def super_test
+        @group = Group.find(params[:id])
+        @group.finish
+        byebug
+        redirect_to @group
+    end
+
 
     private
     def group_params
