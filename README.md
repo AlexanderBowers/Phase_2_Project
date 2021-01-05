@@ -72,7 +72,7 @@ What needs to be done:
 
 Optional role caps for group***
 Show taken and open roles on group's page***
- showing drops on users profiles
+showing drops on users profiles
 Analytics page
 
 MORE METHODS ON MODELS
@@ -89,18 +89,11 @@ leaderboard for raid completions?
 to do for today
 
 alex
-party leader can delete members
-if party leader leaves delete group
-party leader can decide group is full
+party leader can delete group
 
 
 riley
-adding items to raids - faker list?
-flesh out user - profile picture, contact info, etc
-add groups to user profile
+add groups to user profile 
+add drops to profile
 
-
-
-
-remove from index; display on user's profile
 

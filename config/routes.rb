@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :groups do
     collection do
       get :finalize
+      get :wipe
     end
   end
   resources :users

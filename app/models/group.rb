@@ -49,6 +49,9 @@ class Group < ApplicationRecord
         self.save
     end
 
-
-
+    def wipe(user_id)
+        UserGroup.where(user_id: user_id, group_id: self.id).destroy_all
+        UserGroupRole.where(group_id: self.id).destroy_all
+        Group.where(id: self.id).destroy_all
+    end
 end
