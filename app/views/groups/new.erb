@@ -1,9 +1,17 @@
 <h1>New Group Form</h1>
 
+<%if flash[:errors]%>
+    <%flash[:errors].each do |e|%>
+        <p><%=e%></p>
+    <%end%>
+<%end%>
+
 <%=form_for @group do |f|%>
     <%=f.label :name%>
     <%=f.text_field :name%>
-    <%=f.collection_check_boxes :raids, @raids, :id, :name, include_hidden: false%>
-    <%=link_to "raid not listed? click here!", new_raid_path%>    
+    <%=f.collection_check_boxes :raids, @raids, :id, :name, include_hidden: false%><br>
+    <%=f.select :limit, @limit,{prompt: "Group size limit"}%>    
+    <%=link_to "raid not listed? click here!", new_raid_path%><br>
+    
     <%=f.submit%>
 <%end%>

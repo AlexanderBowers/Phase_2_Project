@@ -1,4 +1,9 @@
 class Group < ApplicationRecord
+    validates :limit, numericality: { only_integer: true }
+    validates_presence_of :name
+    validates_uniqueness_of :name
+
+    
     has_many :user_groups
     has_many :users, through: :user_groups
 
@@ -10,7 +15,7 @@ class Group < ApplicationRecord
 
 
     def party_leader
-        self.user_groups.all[0].user.username
+        @party_leader = self.user_groups.all[0].user
     end
 
     def party
@@ -25,8 +30,21 @@ class Group < ApplicationRecord
             end
         end
         party
-
-
     end
+
+    def party_size 
+        @party = []
+        self.user_group_roles.each do |r|
+            @party << r.user
+        end
+       @party
+    end
+
+    def available_spots
+        "There are currently #{self.party_size.length} members.\n #{self.limit - self.party_size.length} spots are available."
+    end
+
+
+
 
 end
