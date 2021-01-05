@@ -10,6 +10,7 @@ User.delete_all
 Group.delete_all
 Raid.delete_all
 
+admin = User.create(username: "admin", password: "admin", pix_url: Faker::Avatar.image)
 u1 = User.create(username: "TSnuttle", password: Faker::Internet.password, pix_url: Faker::Avatar.image)
 u2 = User.create(username: "Dankmaster69420", password: Faker::Internet.password, pix_url: Faker::Avatar.image)
 u3 = User.create(username: "Egofaptor", password: Faker::Internet.password, pix_url: Faker::Avatar.image)

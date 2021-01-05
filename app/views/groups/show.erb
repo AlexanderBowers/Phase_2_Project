@@ -1,89 +1,60 @@
-<<<<<<< HEAD
 <div>
     <br>
     <h2><%=@group.name%><br></h2>
-
-
-    <%if @group.party_size.length < @group.limit%>
-        <%= button_to 'join as tank', {controller: "user_group_roles", action: "create", role_id: "1", user_id: session[:user_id], group_id: @group.id}%>
-        <%= button_to 'join as dps', {controller: "user_group_roles", action: "create", role_id: "2", user_id: session[:user_id], group_id: @group.id}%>
-        <%= button_to 'join as healer', {controller: "user_group_roles", action: "create", role_id: "3", user_id: session[:user_id], group_id: @group.id}%>
-    <%end%>
-    <%="Party leader is:"%> <strong><%= "#{@group.party_leader.username}"%></strong><br> 
+    <% if session[:user_id] == @group.party_leader.id %>
+        <%= link_to "Finalize Group", finalize_groups_path(id: @group.id) %><br>
+    <% end %>
     <br>
-    <strong><%="#{@group.available_spots}"%></strong><br><br>
-
+    <% if session[:user_id] == @group.party_leader.id %>
+        <%= link_to "Destroy Group", wipe_groups_path(id: @group.id) %><br>
+    <% end %>
+    
+    <% if @group.finished == true %>
+        <%= "This group's tasks are finished." %>
+    <% end %>
+    
+    <% if @group.party_size.length < @group.limit %>
+        <%= button_to 'join as tank', {controller: "user_group_roles", action: "create", role_id: "1", user_id: session[:user_id], group_id: @group.id} %>
+        <%= button_to 'join as dps', {controller: "user_group_roles", action: "create", role_id: "2", user_id: session[:user_id], group_id: @group.id} %>
+        <%= button_to 'join as healer', {controller: "user_group_roles", action: "create", role_id: "3", user_id: session[:user_id], group_id: @group.id} %>
+    <% end %>
+    <br>
+    <%= "Party leader is:" %> <strong> <%= "#{@group.party_leader.username}" %> </strong> <br> 
+    <br>
+    <strong><%= "#{@group.available_spots}" %></strong><br><br>
 
     <strong>This group will be tackling:</strong>
     <ul>
-            <%@group.raids.each do |r|%>
-                <li><%=link_to r.name, r%></li>
-            <%end%>
+        <% @group.raids.each do |r| %>
+            <li><%= link_to r.name, r %></li>
+        <% end %>
     </ul>
 
     <h4>Roles are: </h4>
-    <ul>
-        <%@group.user_group_roles.each do |r|%>
-        <li><%="#{r.role.name}: #{r.user.username}"%></li>
-        <%end%>
-    </ul>
-=======
-<br>
-<h2><%=@group.name%><br></h2>
-<% if session[:user_id] == @group.party_leader.id %>
-    <%= link_to "Finalize Group", finalize_groups_path(id: @group.id) %><br>
-<% end %><br>
-<% if session[:user_id] == @group.party_leader.id %>
-    <%= link_to "Destroy Group", wipe_groups_path(id: @group.id) %><br>
-<% end %>
-<%if @group.finished == true%>
-    <%="This group's tasks are finished."%>
-<%end%>
-<%if @group.party_size.length < @group.limit%>
-    <%= button_to 'join as tank', {controller: "user_group_roles", action: "create", role_id: "1", user_id: session[:user_id], group_id: @group.id}%>
-    <%= button_to 'join as dps', {controller: "user_group_roles", action: "create", role_id: "2", user_id: session[:user_id], group_id: @group.id}%>
-    <%= button_to 'join as healer', {controller: "user_group_roles", action: "create", role_id: "3", user_id: session[:user_id], group_id: @group.id}%>
-<%end%><br>
-<%="Party leader is:"%> <strong><%= "#{@group.party_leader.username}"%></strong><br> 
-<br>
-<strong><%="#{@group.available_spots}"%></strong><br><br>
+    <% if session[:user_id] == @group.party_leader.id %>
+        <ul>
+            <% @group.user_group_roles.each do |r| %>
+                <li><%= "#{r.role.name}: #{r.user.username}" %>
+                <%= link_to "remove user", decimate_user_group_roles_path(role_id: r.role.id, user_id: r.user.id, group_id: @group.id)%></li>
+            <% end %>
+        </ul>
+    <% else %>
+        <ul>
+            <% @group.user_group_roles.each do |r| %>
+                <% if r.user.id == session[:user_id] %>
+                    <li>
+                        <%= "#{r.role.name}: #{r.user.username}" %>
+                        <%= link_to "leave group", decimate_user_group_roles_path(role_id: r.role.id, user_id: r.user.id, group_id: @group.id)%>
+                    </li>
+                <% else %>
+                    <li><%= "#{r.role.name}: #{r.user.username}" %></li>
+                <% end %>
+            <% end %>
+        </ul>
+    <% end %>
 
-
-<strong>This group will be tackling:</strong>
-<ul>
-        <%@group.raids.each do |r|%>
-            <li><%=link_to r.name, r%></li>
-        <%end%>
-</ul>
-
-<h4>Roles are: </h4>
-<%if session[:user_id] == @group.party_leader.id %>
-    <ul>
-        <%@group.user_group_roles.each do |r|%>
-            <li><%="#{r.role.name}: #{r.user.username}"%>
-            <%= link_to "remove user", decimate_user_group_roles_path(role_id: r.role.id, user_id: r.user.id, group_id: @group.id)%></li>
-        <%end%>
-    </ul>
-<%else%>
-    <ul>
-        <%@group.user_group_roles.each do |r|%>
-            <%if r.user.id == session[:user_id]%>
-                <li><%="#{r.role.name}: #{r.user.username}"%>
-                <%= link_to "leave group", decimate_user_group_roles_path(role_id: r.role.id, user_id: r.user.id, group_id: @group.id)%></li>
-            <%else%>
-                 <li><%="#{r.role.name}: #{r.user.username}"%></li>
-            <%end%>
-        <%end%>
-    </ul>
-<%end%>
-
-
->>>>>>> origin/master
-
-
-    <p><%= "party is #{@group.party}"%></p><br>
-
-
+    <p><%= "party is #{@group.party}"%></p>
+    <br>
     <%=link_to "Logout", logout_path%>
 </div>
 
