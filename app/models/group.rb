@@ -45,8 +45,20 @@ class Group < ApplicationRecord
     end
 
     def finish
-        self.finished = true 
+        self.finished = true
+        
+        self.users.each do |user|
+            add_current_raid_rewards_to_user(user)
+        end
+
         self.save
+    end
+
+    def add_current_raid_rewards_to_user(user)
+        self.raids.each do |raid|
+            user.add_to_inventory(raid.reward_item_1)
+            user.add_to_inventory(raid.reward_item_2)
+        end
     end
 
     def wipe(user_id)

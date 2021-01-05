@@ -10,12 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_01_05_225316) do
 
   create_table "analytics", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+=======
+ActiveRecord::Schema.define(version: 2021_01_05_190648) do
+>>>>>>> riley
 
   create_table "group_raids", force: :cascade do |t|
     t.integer "group_id"
@@ -29,11 +33,14 @@ ActiveRecord::Schema.define(version: 2021_01_05_225316) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "limit"
-    t.boolean "finished"
+    t.boolean "finished", default: false
   end
 
   create_table "raids", force: :cascade do |t|
     t.string "name"
+    t.string "reward_item_1"
+    t.string "reward_item_2"
+    t.boolean "completed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -61,9 +68,13 @@ ActiveRecord::Schema.define(version: 2021_01_05_225316) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.string "pix_url"
+    t.string "email"
+    t.string "discord_name"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "inventory", default: "--- []\n"
   end
 
 end

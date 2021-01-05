@@ -1,5 +1,20 @@
+<div>
+   <%= "This is the page of #{@user.username}" %>
+   <img src="<%= @user.pix_url %>">
+   <%= "Email: " + @user.email.to_s %>
+   <%= "Discord Username: " + @user.discord_name.to_s %>
 
-<br>
-<%="This is the page of #{@user.username}"%><br>
+   <ul>
+      <% @user.groups.each do |group| %>
+         <li> <%= group.name %> </li>
+      <% end %>
+   </ul>
 
-<%="you are logged in as #{current_user.username}"%>
+   <ul>
+      <% @user.inventory.each do |item| %>
+         <li> <%= item %> </li>
+      <% end %>
+   </ul>
+
+   <%#="you are logged in as #{current_user.username}"%>
+</div>

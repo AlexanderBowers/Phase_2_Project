@@ -1,18 +1,24 @@
-<h1>New User Form</h1>
+<div>
+    <h1>New User Form</h1>
+    <% if flash[:errors] %>
+        <% flash[:errors].each do |e| %>
+            <p><%= e %></p>
+        <% end %>
+    <% end %>
 
-<%if flash[:errors]%>
-    <%flash[:errors].each do |e|%>
-        <p><%=e%></p>
-    <%end%>
-<%end%>
+    <%= form_for @user do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
 
+        <%= f.label :email%>
+        <%= f.email_field :email %>
 
-<%=form_for @user do |f|%>
-    <%=f.label :username%>
-    <%=f.text_field :username%>
+        <%= f.label :discord_name %>
+        <%= f.text_field :discord_name %>
 
-    <%=f.label :password%>
-    <%=f.text_field :password%>
+        <%= f.label :password %>
+        <%= f.text_field :password %>
 
-    <%=f.submit%>
-<%end%>
+        <%= f.submit %>
+    <% end %>
+</div>
