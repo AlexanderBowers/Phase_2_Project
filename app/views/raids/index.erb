@@ -5,5 +5,7 @@
          <li><%= link_to raid[:name], raid_path(raid) %></li>
       <% end %>
    </ul>
-   <%= link_to "New Raid", "/new" %>
+   <% if !session[:user_id].nil? %> 
+      <%= link_to "New Raid", "/new" %>
+   <% end %>
 </div>

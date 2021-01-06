@@ -23,6 +23,10 @@ body {
    font-family: Arial;
 }
 
+h1, h2, h3, h4, h5, h6 {
+   text-align: center;
+}
+
 form {
    width: 50%;
    align-items: flex-start;
@@ -60,11 +64,26 @@ nav ul li a {
 
 .landing-page {
    width: 75%;
-   text
+   text-align: center;
 }
 
+.landing-page .info-section {
+   padding-top: 2.5rem;
+}
 
 .carousel {
    width:940px;
    height: auto ;
- }
+}
+
+.grid-container {
+   display: grid;
+   grid-template-columns: 12rem 12rem 12rem;
+   grid-gap: 5rem;
+}
+
+.grid-item {
+   text-align: center;
+   background-color: whitesmoke;
+   width: 150px;
+}
