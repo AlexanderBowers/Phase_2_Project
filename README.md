@@ -67,51 +67,20 @@ Party lead can 'finish' a group
 Party lead can destroy a group
 User can logout
 Groups that are full do not appear under 'open groups'
-
-What needs to be done:
-
-Optional role caps for group***
-Show taken and open roles on group's page***
-showing drops on users profiles
 Analytics page
 
-MORE METHODS ON MODELS
-
-if a raid's party is full,
-if 'finished'
-show name of raid and a counter on user's page.
-Remove raid from groups#index
-
-leaderboard for raid completions?
-
-possible model methods:
-brainstorming model methods -
-currently have 6, need 20
-
-role -
-counter for tank, dps, and healer
-brings us up to 9
-
-user -
-counter for raids
-counter for roles
-counter for drops
-counter for party lead
-brings us up to 13
 
 
-analytics
-counter for groups made
-counter for users made
-counter for raids made
-counter for raid finished most often
-raid with most tanks
-raid with most dps
-raid with most healers
-counter for user_group_roles
-brings us up to 21
+what needs to be done:
+users can show drops on their page
+link to users on group show page
+add images to raids
+add descriptions to raids
 
 
+landing page
+add discord image to user
+make user page look nice
 
 to do for today
 

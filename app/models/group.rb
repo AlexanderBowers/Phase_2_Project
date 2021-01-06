@@ -46,11 +46,9 @@ class Group < ApplicationRecord
 
     def finish
         self.finished = true
-        
         self.users.each do |user|
             add_current_raid_rewards_to_user(user)
         end
-
         self.save
     end
 
