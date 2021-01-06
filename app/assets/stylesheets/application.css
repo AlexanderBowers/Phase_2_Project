@@ -1,15 +1,55 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+body {
+   margin: 0 auto;
+   font-family: Arial;
+}
+
+form {
+   width: 50%;
+   align-items: flex-start;
+}
+
+nav {
+   background-color: ghostwhite;
+}
+
+nav ul {
+   top: 0;
+   display: flex;
+   justify-content: flex-end;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+nav ul li {
+   display: inline;
+}
+
+nav ul li a {
+   display: block;
+   padding: .25rem 1rem;
+   margin: 1rem;
+   text-decoration: none;
+}
+
+.flex-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+

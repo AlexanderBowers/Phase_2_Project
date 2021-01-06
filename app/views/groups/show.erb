@@ -1,27 +1,27 @@
-<div>
-    <br>
-    <h2><%=@group.name%><br></h2>
+<div class="groups-show">
+    
+    <h2><%=@group.name%></h2>
     <% if session[:user_id] == @group.party_leader.id %>
-        <%= link_to "Finalize Group", finalize_groups_path(id: @group.id) %><br>
-    <% end %>
-    <br>
-    <% if session[:user_id] == @group.party_leader.id %>
-        <%= link_to "Destroy Group", wipe_groups_path(id: @group.id) %><br>
+        <%= link_to "Finalize Group", finalize_groups_path(id: @group.id) %>
     <% end %>
     
+    <% if session[:user_id] == @group.party_leader.id %>
+        <%= link_to "Destroy Group", wipe_groups_path(id: @group.id) %>
+    <% end %>
+
     <% if @group.finished == true %>
         <%= "This group's tasks are finished." %>
     <% end %>
-    
+
     <% if @group.party_size.length < @group.limit %>
         <%= button_to 'join as tank', {controller: "user_group_roles", action: "create", role_id: "1", user_id: session[:user_id], group_id: @group.id} %>
         <%= button_to 'join as dps', {controller: "user_group_roles", action: "create", role_id: "2", user_id: session[:user_id], group_id: @group.id} %>
         <%= button_to 'join as healer', {controller: "user_group_roles", action: "create", role_id: "3", user_id: session[:user_id], group_id: @group.id} %>
     <% end %>
-    <br>
-    <%= "Party leader is:" %> <strong> <%= "#{@group.party_leader.username}" %> </strong> <br> 
-    <br>
-    <strong><%= "#{@group.available_spots}" %></strong><br><br>
+    
+    <%= "Party leader is:" %> <strong> <%= "#{@group.party_leader.username}" %> </strong> 
+    
+    <strong><%= "#{@group.available_spots}" %></strong>
 
     <strong>This group will be tackling:</strong>
     <ul>
@@ -54,9 +54,6 @@
     <% end %>
 
     <p><%= "party is #{@group.party}"%></p>
-    <br>
+    
     <%=link_to "Logout", logout_path%>
 </div>
-
-
-    

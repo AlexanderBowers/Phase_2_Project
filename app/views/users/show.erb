@@ -1,4 +1,4 @@
-<div>
+<div class="user-show">
    <%= "This is the page of #{@user.username}" %>
    <img src="<%= @user.pix_url %>">
    <%= "Email: " + @user.email.to_s %>
@@ -15,6 +15,4 @@
          <li> <%= item %> </li>
       <% end %>
    </ul>
-
-   <%#="you are logged in as #{current_user.username}"%>
 </div>

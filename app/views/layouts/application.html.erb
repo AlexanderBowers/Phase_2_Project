@@ -11,6 +11,28 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <nav>
+      <ul>
+        <li><%= link_to "Users", "/users" %></li>
+        <li><%= link_to "Groups", "/groups" %></li>
+        <li><%= link_to "Raids", "/raids" %></li>
+        <% if :logged_in_true %> 
+          <li>
+            <%= link_to "Logout", "/logout" %>
+          </li>
+
+          <li>
+            <%= link_to "Profile", "/users/#{session[:user_id]}" %>
+          </li>
+        <% else %>
+          <li><%= link_to "Login", "/login" %></li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="flex-container">
+      <%= yield %>
+    </div>
+
   </body>
 </html>

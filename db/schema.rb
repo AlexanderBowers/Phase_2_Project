@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_01_05_225316) do
-
-  create_table "analytics", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-=======
 ActiveRecord::Schema.define(version: 2021_01_05_190648) do
->>>>>>> riley
 
   create_table "group_raids", force: :cascade do |t|
     t.integer "group_id"
