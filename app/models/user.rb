@@ -44,44 +44,27 @@ class User < ApplicationRecord
         "#{self.username} has been the party leader of #{total} groups."
     end
 
-    def tank_count
+    def role_count(role_id, role)
         total = 0
-        groups = self.user_group_roles.all.where(role_id: 1)
+        groups = self.user_group_roles.all.where(role_id: role_id)
         groups.each do |g|
             if g.group.finished == true
                 total += 1
             end
         end
-        "#{self.username} has been a tank #{total} time(s)."
+        "#{self.username} has been a #{role} #{total} time(s)."
+    end
+
+    def tank_count
+        self.role_count(1, "tank")
     end
 
     def dps_count
-        total = 0
-        groups = self.user_group_roles.all.where(role_id: 2)
-        groups.each do |g|
-            if g.group.finished == true
-                total += 1
-            end
-        end
-        "#{self.username} has been a dps #{total} time(s)."
+       self.role_count(2, "dps")
     end
 
     def healer_count
-        total = 0
-        groups = self.user_group_roles.all.where(role_id: 3)
-        groups.each do |g|
-            if g.group.finished == true
-                total += 1
-            end
-        end
-        "#{self.username} has been a healer #{total} time(s)."
+        self.role_count(3, "healer")
     end
 
-#     users track how many raids they've done
-# users track how many groups they've been in and finished
-
-# how many times a user has been party lead and finished a group
-# how many times a user has done tank
-# has done dps
-# has done healer
 end
