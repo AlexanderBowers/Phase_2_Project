@@ -1,5 +1,6 @@
 class Analytic < ApplicationRecord
 
+
     def groups
         "Current amount of groups made: #{Group.all.length}"
     end
@@ -12,19 +13,41 @@ class Analytic < ApplicationRecord
         "Current amount of raids made: #{Raid.all.length}"
     end
 
+    def total_raids
+        total = 0
+        Group.all.each do |g|
+            if g.finished == true
+                total += g.raids.length
+            end
+        end
+        "Current amount of raids finished: #{total}"
+    end
+
     def roles
         "There are currently #{UserGroupRole.all.length} roles assigned to groups"
     end
 
+    def role_count(role_key, role)
+        total = 0
+        Group.all.each do |g|
+            if g.finished == true
+                total += g.party[role_key].length
+            end
+        end
+        "Out of all groups who have finished, there have been #{total} people as #{role}."
+    end
 
+    def tanks
+        self.role_count(:tank, "tank")
+    end
+
+    def dps
+        self.role_count(:dps, "dps")
+    end
+
+    def healers
+        self.role_count(:healer, "healer")
+    end
 
 end
-# analytics
-# counter for groups made
-# counter for users made
-# counter for raids made
-# counter for raid finished most often
-# raid with most tanks
-# raid with most dps
-# raid with most healers
-# counter for user_group_roles
+
