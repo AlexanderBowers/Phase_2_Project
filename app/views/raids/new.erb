@@ -1,8 +1,18 @@
 <div class="raids-new">
     <h1>New Raid Form</h1>
+    <% if flash[:errors] %>
+        <% flash[:errors].each do |e| %>
+            <p><%= e %></p>
+        <% end %>
+    <% end %>
     <%= form_for @raid do |f| %>
         <%= f.label :name %>
-        <%= f.text_field :name %>
-        <%= f.submit %>
+        <%= f.text_field :name %><br>
+        <%= f.label :description%>
+        <%= f.text_field :description%><br>
+        <%= f.label :image%>
+        <%= f.text_field :image%><br>
+        <%= f.submit %><br>
+        
     <% end %>
 </div>
