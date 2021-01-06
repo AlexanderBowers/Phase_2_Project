@@ -46,7 +46,7 @@ class User < ApplicationRecord
 
     def tank_count
         total = 0
-        groups = User.all[6].user_group_roles.all.where(role_id: 1)
+        groups = self.user_group_roles.all.where(role_id: 1)
         groups.each do |g|
             if g.group.finished == true
                 total += 1
@@ -57,7 +57,7 @@ class User < ApplicationRecord
 
     def dps_count
         total = 0
-        groups = User.all[6].user_group_roles.all.where(role_id: 2)
+        groups = self.user_group_roles.all.where(role_id: 2)
         groups.each do |g|
             if g.group.finished == true
                 total += 1
@@ -68,7 +68,7 @@ class User < ApplicationRecord
 
     def healer_count
         total = 0
-        groups = User.all[6].user_group_roles.all.where(role_id: 3)
+        groups = self.user_group_roles.all.where(role_id: 3)
         groups.each do |g|
             if g.group.finished == true
                 total += 1
