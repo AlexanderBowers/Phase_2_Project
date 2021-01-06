@@ -14,17 +14,13 @@
 
     <nav>
       <ul>
+        <li><%= link_to "Home", "/" %></li>
         <li><%= link_to "Users", "/users" %></li>
-        <li><%= link_to "Groups", "/groups" %></li>
         <li><%= link_to "Raids", "/raids" %></li>
         <% if !session[:user_id].nil? %> 
-          <li>
-            <%= link_to "Logout", "/logout" %>
-          </li>
-
-          <li>
-            <%= link_to "Profile", "/users/#{session[:user_id]}" %>
-          </li>
+          <li><%= link_to "Logout", "/logout" %></li>
+          <li><%= link_to "Profile", "/users/#{session[:user_id]}" %></li>
+          <li><%= link_to "Groups", "/groups" %></li>
         <% else %>
           <li><%= link_to "Login", "/login" %></li>
         <% end %>
