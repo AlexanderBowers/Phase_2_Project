@@ -22,5 +22,5 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy', as: 'logout'
   get '/signup', to: 'users#new', as: 'signup'
-  root 'sessions#new'
+  root 'homepage#index'
 end

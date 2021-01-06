@@ -13,6 +13,11 @@
 *= require_tree .
 *= require_self
 */
+
+$icon-font-path: 'bootstrap/';
+@import "bootstrap";
+@import "bootstrap-sprockets";
+
 body {
    margin: 0 auto;
    font-family: Arial;
