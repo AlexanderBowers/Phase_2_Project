@@ -27,43 +27,27 @@ class Analytic < ApplicationRecord
         "There are currently #{UserGroupRole.all.length} roles assigned to groups"
     end
 
-    def tanks
+    def role_count(role_key, role)
         total = 0
         Group.all.each do |g|
             if g.finished == true
-                total += g.party[:tank].length
+                total += g.party[role_key].length
             end
         end
-        "Out of all groups who have finished, there have been #{total} people as tanks."
+        "Out of all groups who have finished, there have been #{total} people as #{role}."
+    end
+
+    def tanks
+        self.role_count(:tank, "tank")
     end
 
     def dps
-        total = 0
-        Group.all.each do |g|
-            if g.finished == true
-                total += g.party[:dps].length
-            end
-        end
-        "Out of all groups who have finished, there have been #{total} people as dps."
+        self.role_count(:dps, "dps")
     end
 
     def healers
-        total = 0
-        Group.all.each do |g|
-            if g.finished == true
-                total += g.party[:healer].length
-            end
-        end
-        "Out of all groups who have finished, there have been #{total} people as healer."
+        self.role_count(:healer, "healer")
     end
-
-
-
-   
-
-    
-
-
 
 end
 
