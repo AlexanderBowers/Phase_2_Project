@@ -72,21 +72,15 @@ Analytics page
 
 
 what needs to be done:
-
-how many raids in a group
-
-total raids being run - add up all raids in all groups
-
-
-users track how many raids they've done
-users track how many groups they've been in and finished
-
-how many times a user has been party lead and finished a group
-how many times a user has done tank
-has done dps
-has done healer
+users can show drops on their page
+link to users on group show page
+add images to raids
+add descriptions to raids
 
 
+landing page
+add discord image to user
+make user page look nice
 
 to do for today
 
