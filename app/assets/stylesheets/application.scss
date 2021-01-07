@@ -153,7 +153,7 @@ nav {
    display: grid;
    justify-content: center;
    grid-template-columns: 12rem 12rem;
-   grid-gap: 6.5rem;
+   grid-gap: 2rem;
 }
 
 .grid-item {
@@ -261,12 +261,31 @@ nav {
 
 #user-data {
    order: 1;
+   text-align: center;
+
 }
 
 #user-data-stats {
    order: 2;
+   padding-top: 10rem;
+   
+   ul {
+      list-style: none;
+   }
+
+   h3 {
+      padding-top: 2rem;
+   }
 }
 
-// #user-icons {
-
-// }
+#user-icons {
+   top: 0;
+   display: flex;
+   justify-content: center;
+   list-style: none;
+   margin: 0;
+   padding: 1rem;
+   li {
+      padding: 1rem;
+   }
+}
