@@ -16,9 +16,10 @@
     admin = User.create(:username => "Admin", :password => "lol", :pix_url => Faker::Avatar.image)
     u1 = User.create(:username => "TSnuttle", :pix_url => Faker::Avatar.image, :email => "lol@gmail.com", :discord_id => "TSnuttle#6461", :steam_id => "tsnuttle", :password => "lol", :user_desc => "Hi, I play games.")
 
-    r1 = Raid.create(:name => "Raid on " + Faker::Games::ElderScrolls.city)
-    r2 = Raid.create(:name => "Attack on " + Faker::Games::ElderScrolls.city)
-    r3 = Raid.create(:name => "Raid " + Faker::Games::ElderScrolls.city)
+    r1 = Raid.create(:name => "Raid on " + Faker::Games::ElderScrolls.city, :description => "Take back the city!")
+    r2 = Raid.create(:name => "Attack on " + Faker::Games::ElderScrolls.city, :description =>"Take back the city!")
+    r3 = Raid.create(:name => "Raid " + Faker::Games::ElderScrolls.city, :description => "Take back the city!")
+    r4 = Raid.create(:name => "Last Wish", :description => "Delve into the heart of the Last City and kill the last ahamkara, Riven.")
 
     Role.create(name: "tank")
     Role.create(name: "dps")

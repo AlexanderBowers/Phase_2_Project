@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 2021_01_06_182247) do
     t.boolean "completed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "image"
     t.text "description"
   end
 
