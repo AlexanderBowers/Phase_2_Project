@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_01_06_182247) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
+    t.string "group_desc"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "limit"
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_01_06_182247) do
 
   create_table "raids", force: :cascade do |t|
     t.string "name"
+    t.string "raid_desc"
     t.string "reward_item_1"
     t.string "reward_item_2"
     t.boolean "completed", default: false
@@ -68,7 +70,9 @@ ActiveRecord::Schema.define(version: 2021_01_06_182247) do
     t.string "username"
     t.string "pix_url"
     t.string "email"
-    t.string "discord_name"
+    t.string "discord_id"
+    t.string "steam_id"
+    t.string "user_desc"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

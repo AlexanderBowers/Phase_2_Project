@@ -1,9 +1,11 @@
-<div>
+<div class="raids-list">
    <h1>Raids</h1>
    <ul>
       <% @raids.each do |raid| %>
          <li><%= link_to raid[:name], raid_path(raid) %></li>
       <% end %>
    </ul>
-   <%= link_to "New Raid", "/new" %>
+   <% if !session[:user_id].nil? %> 
+      <%= link_to "New Raid", "/raids/new" %>
+   <% end %>
 </div>

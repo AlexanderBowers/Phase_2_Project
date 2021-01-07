@@ -11,6 +11,29 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <nav>
+      <ul>
+        <li><%= link_to "Home", "/" %></li>
+        <li><%= link_to "Users", "/users" %></li>
+        <li><%= link_to "Raids", "/raids" %></li>
+        <% if !session[:user_id].nil? %> 
+          <li><%= link_to "Profile", "/users/#{session[:user_id]}" %></li>
+          <li><%= link_to "Groups", "/groups" %></li>
+          <li><%= link_to "Logout", "/logout" %></li>
+        <% else %>
+          <li><%= link_to "Login", "/login" %></li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="flex-container">
+      <%= yield %>
+      
+    </div>
+    
+    <footer class="footer">Riley Iverson & Alexander Bowers ©2021</footer>
+    
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   </body>
 </html>

@@ -1,31 +1,66 @@
-<div>
-   <%= "This is the page of #{@user.username}" %><br>
-   <img src="<%= @user.pix_url %>"><br>
-   <%= "Discord Username: " + @user.discord_name.to_s %><br>
-   <%= "Email: " + @user.email.to_s %>
-   
-
-   <ul>
-   <strong>
-      <% @user.groups.each do |group| %>
-         <li> <%= group.name %> </li>
+<div class="user-show">
+   <div class="user-data">
+      <h2><%= @user.username %></h2>
+      <% if !@user.pix_url.nil? %>
+         <img src="<%= @user.pix_url %>">
+      <% else %>
+         <img src="<%= Faker::Avatar.image %>">
       <% end %>
-   </ul>
-   <%=@user.total_raids%><br>
-   <%=@user.total_groups%><br>
-   <%=@user.party_leads%><br>
-   <%=@user.tank_count%><br>
-   <%=@user.dps_count%><br>
-   <%=@user.healer_count%><br>
+      <ul>
+         <% if !@user.email.nil? %>
+            <li>
+               <a href="mailto:<%= @user.email.to_s %>"><img src="/assets/email-icon.svg" width="50"> </a>
+               <%= "Email"%>
+            </li>
+         <% end %>
+         
+         <% if !@user.email.nil? %>
+            <li>
+               <a href="https://discordapp.com/users/<%= @user.discord_id %>"><img src="/assets/discord-icon.svg" width="50"></a>
+               <%= "Discord" %>
+            </li>
+         <% end %>
+         
+         <% if !@user.email.nil? %>
+            <li>
+               <a href="https://steamcommunity.com/id/<%= @user.steam_id %>"><img src="/assets/steam-icon.svg" width="50"></a>
+               <%= "Steam" %>
+            </li>
+         <% end %>
+      </ul>
+   </div>
 
-   <br><strong>Notable drops:</strong>
+   <div class="user-data-groups">
+      <h4>Past Groups</h4>
+      <ul>
+         <% if @user.groups.count <= 0 %>
+            <li>None</li>
+         <% else %>
+            <% @user.groups.each do |group| %>
+               <li> <%= group.name %> </li>
+            <% end %>
+         <% end %>
+      </ul>
+   </div>
+
+   <div class="user-data-stats">
+   <h4>Statistics</h4>
+   <ul>
+      <li><%=@user.total_raids%></li>
+      <li><%=@user.total_groups%></li>
+      <li><%=@user.party_leads%></li>
+      <li><%=@user.tank_count%></li>
+      <li><%=@user.dps_count%></li>
+      <li><%=@user.healer_count%></li>
+   </ul>
+   </div>
+
+   <div class="user-data-drops">
+   <h4>Notable drops:</h4>
    <ul>
       <% @user.inventory.each do |item| %>
          <li> <%= item %> </li>
       <% end %>
    </ul>
-
-   
-
-   <%#="you are logged in as #{current_user.username}"%>
+   </div>
 </div>

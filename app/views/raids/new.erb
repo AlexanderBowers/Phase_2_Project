@@ -1,5 +1,5 @@
-<div>
-    <h1>New Raid Form</h1>
+<div class="raids-new">
+    <h2>New Raid Form</h2>
     <% if flash[:errors] %>
         <% flash[:errors].each do |e| %>
             <p><%= e %></p>
@@ -7,12 +7,15 @@
     <% end %>
     <%= form_for @raid do |f| %>
         <%= f.label :name %>
-        <%= f.text_field :name %><br>
+        <%= f.text_field :name %>
+        
         <%= f.label :description%>
-        <%= f.text_field :description%><br>
-        <%= f.label :image%>
-        <%= f.text_field :image%><br>
-        <%= f.submit %><br>
+        <%= f.text_field :description%>
+        
+        <%= f.label :image, "Image URL"%>
+        <%= f.text_field :image %>
+        
+        <%= f.submit %>
         
     <% end %>
 </div>
