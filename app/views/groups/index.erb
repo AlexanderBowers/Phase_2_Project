@@ -1,17 +1,26 @@
 <div id="groups-list">   
-    <h1>All Groups Page</h1>
+    <h2>All Open Groups </h2>
 
+    <div class="grid-header">
+        <div class="grid-item button">
+            <%=link_to "New Group", new_group_path%>
+        </div>
 
-    <%=link_to "click here to create a new group", new_group_path%>
+        <div class="grid-item button">
+            <%= link_to "All Group Analytics", analytic_url(1) %>
+        </div>
+    </div>
 
-    <h3>Open Groups:</h3>
-    <ul>
+    <hr>
+
+    <div class="grid-container">
         <% @groups.each do |g| %>
             <% if g.party_size.length < g.limit %>
-                <li><%= link_to g.name, g %></li>
+                <%# <div class="grid-item"> %>
+                    <%= link_to g.name, g, class: "grid-item" %>
+                <%# </div> %>
             <% end %>
         <% end %>
-    </ul>
+    </div>
 
-    <%= link_to "Analytics", analytic_url(1) %>
 </div>

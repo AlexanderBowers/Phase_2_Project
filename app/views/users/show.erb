@@ -6,7 +6,7 @@
       <% else %>
          <img src="<%= Faker::Avatar.image %>">
       <% end %>
-      <ul>
+      <ul id="user-icons">
          <% if !@user.email.nil? %>
             <li>
                <a href="mailto:<%= @user.email.to_s %>"><img src="/assets/email-icon.svg" width="50"> </a>
@@ -30,7 +30,7 @@
       </ul>
    </div>
 
-   <div id="user-data-groups">
+   <div id="user-data-stats">
       <h4>Past Groups</h4>
       <ul>
          <% if @user.groups.count <= 0 %>
@@ -41,26 +41,22 @@
             <% end %>
          <% end %>
       </ul>
-   </div>
 
-   <div id="user-data-stats">
-   <h4>Statistics</h4>
-   <ul>
-      <li><%=@user.total_raids%></li>
-      <li><%=@user.total_groups%></li>
-      <li><%=@user.party_leads%></li>
-      <li><%=@user.tank_count%></li>
-      <li><%=@user.dps_count%></li>
-      <li><%=@user.healer_count%></li>
-   </ul>
-   </div>
+      <h4>Statistics</h4>
+      <ul>
+         <li><%=@user.total_raids%></li>
+         <li><%=@user.total_groups%></li>
+         <li><%=@user.party_leads%></li>
+         <li><%=@user.tank_count%></li>
+         <li><%=@user.dps_count%></li>
+         <li><%=@user.healer_count%></li>
+      </ul>
 
-   <div id="user-data-drops">
-   <h4>Notable drops:</h4>
-   <ul>
-      <% @user.inventory.each do |item| %>
-         <li> <%= item %> </li>
-      <% end %>
-   </ul>
+      <h4>Notable drops:</h4>
+      <ul>
+         <% @user.inventory.each do |item| %>
+            <li> <%= item %> </li>
+         <% end %>
+      </ul>
    </div>
 </div>
