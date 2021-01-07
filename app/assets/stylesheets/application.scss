@@ -143,7 +143,16 @@ nav {
 
 .grid-container {
    display: grid;
-   grid-template-columns: 12rem 12rem 12rem;
+   justify-content: center;
+   grid-template-columns: 14rem 14rem 14rem 14rem;
+   grid-gap: 4rem;
+
+}
+
+.grid-header {
+   display: grid;
+   justify-content: center;
+   grid-template-columns: 12rem 12rem;
    grid-gap: 6.5rem;
 }
 
@@ -151,15 +160,37 @@ nav {
    text-align: center;
    
    a {
-      
       text-decoration: none;
-      padding: 15px 30px;
       color: white;
+      padding: 1.5rem 2rem;
       background-color: #666666;
       
       &:hover {
          color: white;
-         background-color: gray;
+         text-decoration: none;
+         background-color: grey;
+      }
+
+      &:visited {
+         text-decoration: none;         
+      }
+   }
+}
+
+#raids-list .grid-item {
+   text-align: center;
+   background-color: #666666;
+   padding: 1.5rem 2rem;
+   margin-top: auto;
+   margin-bottom: auto;
+   
+   a {
+      text-decoration: none;
+      color: white;
+      
+      &:hover {
+         color: white;
+         text-shadow: 2px 2px #303030;
          text-decoration: none;
       }
 
@@ -216,4 +247,21 @@ nav {
 
 #new-user {
    width: 50%;
+}
+
+#user-show {
+   display: flex;
+   
+}
+
+#user-data {
+   order: 1;
+}
+
+#user-data-stats {
+   order: 2;
+}
+
+#user-icons {
+   
 }
