@@ -17,6 +17,7 @@ class GroupsController < ApplicationController
 
     def create
         @raids = Raid.all
+        @limit = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         @group = Group.create(group_params)
         if @group.valid?
             create_user_group
@@ -39,7 +40,7 @@ class GroupsController < ApplicationController
         @group = Group.find(params[:id])
         @groups = Group.all
         @group.wipe(user_id: [:user_id])
-        redirect_to groups_pathparams
+        redirect_to @groups
     end
 
 
