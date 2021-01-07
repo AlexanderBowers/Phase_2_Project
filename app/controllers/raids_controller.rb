@@ -25,7 +25,7 @@ class RaidsController < ApplicationController
     private
     
     def raid_params
-        params.require(:raid).permit(:name, :image, :description)
+        params.require(:raid).permit(:name, :image, :description, :image)
     end
 
 
