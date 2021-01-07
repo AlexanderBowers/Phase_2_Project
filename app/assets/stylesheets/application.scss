@@ -187,7 +187,8 @@ nav {
    a {
       text-decoration: none;
       color: white;
-      
+      background: none;
+      padding: 0;
       &:hover {
          color: white;
          text-shadow: 2px 2px #303030;
@@ -245,6 +246,8 @@ nav {
    }
 }
 
+
+
 #new-user {
    width: 50%;
 }
@@ -262,6 +265,6 @@ nav {
    order: 2;
 }
 
-#user-icons {
-   
-}
+// #user-icons {
+
+// }
