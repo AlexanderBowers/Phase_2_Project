@@ -1,5 +1,5 @@
 <div id="groups-list">   
-    <h2>All Open Groups </h2>
+    <h2>Groups</h2>
 
     <div class="grid-header">
         <div class="grid-item button">
@@ -13,12 +13,14 @@
 
     <hr>
 
+    <h3>Available Groups</h3>
+
     <div class="grid-container">
         <% @groups.each do |g| %>
             <% if g.party_size.length < g.limit %>
-                <%# <div class="grid-item"> %>
+                <div class="grid-item"> 
                     <%= link_to g.name, g, class: "grid-item" %>
-                <%# </div> %>
+                </div> 
             <% end %>
         <% end %>
     </div>
