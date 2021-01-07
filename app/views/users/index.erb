@@ -1,13 +1,11 @@
-<div class="user-list">
+<div id="user-list">
    <h1>Users</h1>
    <div class="grid-container">
-      
       <% @users.each do |user| %>
          <div class="grid-item">
             <img src="<%= user[:pix_url] %>" width="150px">
             <%= link_to user[:username], user_path(user) %>
          </div>
       <% end %>
-      
    </div>
 </div>

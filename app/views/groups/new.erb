@@ -1,5 +1,5 @@
-<div class="groups-new">
-    <h1>New Group Form</h1>
+<div id="groups-new">
+    <h2>New Group</h2>
 
     <% if flash[:errors] %>
         <% flash[:errors].each do |e| %>
@@ -12,7 +12,14 @@
         <%= f.text_field :name %>
         <%= f.collection_check_boxes :raids, @raids, :id, :name, include_hidden: false %>
         <%= f.select :limit, @limit,{prompt: "Group size limit"} %>    
-        <%= link_to "raid not listed? click here!", new_raid_path %>
         
         <%= f.submit%>
     <% end %>
+
+    <hr>
+
+    <div class="button">
+        <%= link_to "New Raid", new_raid_path %>
+    </div>
+
+</div>

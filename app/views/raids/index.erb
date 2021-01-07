@@ -1,11 +1,19 @@
-<div class="raids-list">
-   <h1>Raids</h1>
-   <ul>
-      <% @raids.each do |raid| %>
-         <li><%= link_to raid[:name], raid_path(raid) %></li>
+<div id="raids-list">
+   <h2>All Raids</h2>
+   <div class="button">
+      <% if !session[:user_id].nil? %> 
+         <%= link_to "New Raid", "/raids/new" %>
       <% end %>
-   </ul>
-   <% if !session[:user_id].nil? %> 
-      <%= link_to "New Raid", "/raids/new" %>
-   <% end %>
+   </div>
+
+   <hr>
+
+   <div class="grid-container">
+      <% @raids.each do |raid| %>
+         <div class="grid-item">
+            <%= link_to raid[:name], raid_path(raid) %>
+         </div>
+      <% end %>
+   </div>
+
 </div>

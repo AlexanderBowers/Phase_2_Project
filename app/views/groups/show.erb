@@ -1,4 +1,4 @@
-<div class="groups-show">
+<div id="groups-show">
     
     <h2><%=@group.name%></h2>
     <% if session[:user_id] == @group.party_leader.id %>
@@ -22,6 +22,9 @@
     <%= "Party leader is:" %> <strong> <%= "#{@group.party_leader.username}" %> </strong> 
     
     <strong><%= "#{@group.available_spots}" %></strong>
+
+    <p>Join Discord Server</p>
+    <a href="https://discord.gg/sJApeTZS"><img src="/assets/discord-icon.svg" width="50"></a>
 
     <strong>This group will be tackling:</strong>
     <ul>

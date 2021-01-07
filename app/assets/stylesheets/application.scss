@@ -17,10 +17,177 @@
 $icon-font-path: 'bootstrap/';
 @import "bootstrap";
 @import "bootstrap-sprockets";
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
+//general page styling
 body {
    margin: 0 auto;
-   font-family: Arial;
+   font-family: 'Fira Sans', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   text-align: center;
+}
+
+select {
+   width: 100%;
+}
+
+hr {
+   border-top: .25rem solid grey;
+   border-radius: 3px;
+}
+
+// form styling
+form {
+   margin-left: auto;
+   margin-right: auto;
+   width: 50%;
+}
+
+input[type=text], input[type=email] {
+   width: 100%;
+   padding: 6px 10px;
+   margin: 8px 0;
+   box-sizing: border-box;
+}
+
+input[type=submit] {
+   background-color: #666666;
+   border:none;
+   color: white;
+   
+   padding: 15px 30px;
+   text-decoration: none;
+   cursor: pointer;
+   display: block;
+   margin: 0 auto;
+   margin-top: 1.5rem;
+
+   &:hover {
+      background-color: grey;
+   }
+}
+
+input[type="checkbox"] {
+   width: 5rem;
+}
+
+// navbar styling
+nav {
+   background-color: #666666;
+   ul {
+      top: 0;
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+         display: inline;
+
+         a {
+            display: block;
+            padding: 2rem 3rem;
+            text-decoration: none;
+            color: white;
+            font-size: large;
+
+            &:hover {
+               padding: 2rem 3rem;
+               color:white;
+               background-color: grey;
+               text-decoration: none;
+            }
+
+            &:visited {
+               color: white;
+               text-decoration: none;
+            }
+         }
+      }
+   }
+}
+
+//class styling
+.flex-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.landing-page {
+   width: 75%;
+   text-align: center;
+
+   h2 {
+      padding: 1.5rem;
+   }
+
+}
+
+.info-section {
+   margin-left: auto;
+   margin-right: auto;
+   width: 50%;
+
+   text-align: center;
+   padding-top: 1.5rem;
+}
+
+.carousel {
+   width:940px;
+   height: auto ;
+}
+
+.grid-container {
+   display: grid;
+   grid-template-columns: 12rem 12rem 12rem;
+   grid-gap: 6.5rem;
+}
+
+.grid-item {
+   text-align: center;
+   
+   a {
+      
+      text-decoration: none;
+      padding: 15px 30px;
+      color: white;
+      background-color: #666666;
+      
+      &:hover {
+         color: white;
+         background-color: gray;
+         text-decoration: none;
+      }
+
+      &:visited {
+         text-decoration: none;         
+      }
+   }
+}
+
+.button {
+   display: flex;
+   justify-content: center;
+
+   a {
+      background-color: #666666;
+      text-decoration: none;
+      color: white;
+      padding: 15px 30px;
+
+      &:hover{
+         color: white;
+         background-color: gray;
+      }
+
+      &:visited {
+         color: white;
+      }
+   }
 }
 
 .footer {
@@ -31,109 +198,22 @@ body {
    padding: 1rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
-   text-align: center;
-}
 
-// form styling
-form {
-   margin-left: auto;
-   margin-right: auto;
-   width: 50%;
-   
-}
-
-input[type=text], input[type=email] {
-   width: 100%;
-   padding: 12px 20px;
-   margin: 8px 0;
-   box-sizing: border-box;
-}
-
-input[type=submit] {
-   background-color: #666666;
-   border:none;
-   color: white;
-   padding: 15px 30px;
-   text-decoration: none;
-   cursor: pointer;
-}
-
-input[type=submit]:hover {
-   background-color: grey;
-}
-
-
-// navbar styling
-nav {
-   background-color: #666666;
-}
-
-nav ul {
-   top: 0;
-   display: flex;
-   justify-content: flex-end;
-   list-style: none;
-   margin: 0;
-   padding: 0;
-}
-
-nav ul li {
-   display: inline;
-}
-
-nav ul li a {
-   display: block;
-   padding: 2rem 3rem;
-   text-decoration: none;
-   color: white;
-   font-size: large;
-}
-
-nav ul li a:hover {
-   padding: 2rem 3rem;
-   color:white;
-   background-color: grey;
-   text-decoration: none;
-}
-
-.flex-container {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-}
-
-.landing-page {
-   width: 75%;
-   text-align: center;
-}
-
-.landing-page h2 {
-   padding: 1.5rem;
-}
-
-.landing-page .info-section {
-   padding-top: 1.5rem;
-}
-
-.carousel {
-   width:940px;
-   height: auto ;
-}
-
-.user-list .grid-container {
-   display: grid;
-   grid-template-columns: 12rem 12rem 12rem;
-   grid-gap: 6.5rem;
-}
-
-.user-list .grid-item {
+// id styling
+#user-list .grid-item {
    text-align: center;
    background-color: whitesmoke;
    width: 150px;
+   height: 215px;
    padding: 1rem 0;
+
+   img {
+      padding-left:.5rem;
+      padding-right:.5rem;
+      padding-bottom: 2rem;
+   }
 }
 
-.new-user {
+#new-user {
    width: 50%;
 }
