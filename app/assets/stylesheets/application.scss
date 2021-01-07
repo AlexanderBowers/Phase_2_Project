@@ -40,12 +40,11 @@ form {
    margin-left: auto;
    margin-right: auto;
    width: 50%;
-   
 }
 
 input[type=text], input[type=email] {
    width: 100%;
-   padding: 12px 20px;
+   padding: 6px 10px;
    margin: 8px 0;
    box-sizing: border-box;
 }
@@ -54,13 +53,52 @@ input[type=submit] {
    background-color: #666666;
    border:none;
    color: white;
+   
    padding: 15px 30px;
    text-decoration: none;
    cursor: pointer;
+   display: block;
+   margin: 0 auto;
+   margin-top: 1.5rem;
 }
 
 input[type=submit]:hover {
    background-color: grey;
+}
+
+input[type="checkbox"] {
+   width: 5rem;
+}
+
+select {
+   width: 100%;
+}
+
+hr {
+   border-top: .25rem solid grey;
+   border-radius: 3px;
+}
+
+.button {
+   display: flex;
+   justify-content: center;
+}
+
+.button a {
+   background-color: #666666;
+   text-decoration: none;
+   color: white;
+   padding: 15px 30px;
+
+}
+
+.button a:hover {
+   color: white;
+   background-color: gray;
+}
+
+.button a:visited {
+   color: white;
 }
 
 
@@ -97,6 +135,11 @@ nav ul li a:hover {
    text-decoration: none;
 }
 
+nav ul li a:visited {
+   color: white;
+   text-decoration: none;
+}
+
 .flex-container {
    display: flex;
    flex-wrap: wrap;
@@ -121,17 +164,45 @@ nav ul li a:hover {
    height: auto ;
 }
 
-.user-list .grid-container {
+.grid-container {
    display: grid;
    grid-template-columns: 12rem 12rem 12rem;
    grid-gap: 6.5rem;
+}
+
+.grid-item {
+   text-align: center;
+}
+
+.grid-item a {
+   text-decoration: none;
+   padding: 15px 30px;
+   color: white;
+   background-color: #666666;
+}
+
+.grid-item a:hover {
+   color: white;
+   background-color: gray;
+   text-decoration: none;
+}
+
+.grid-item a:visited {
+   text-decoration: none;
 }
 
 .user-list .grid-item {
    text-align: center;
    background-color: whitesmoke;
    width: 150px;
+   height: 215px;
    padding: 1rem 0;
+}
+
+.user-list .grid-item img {
+   padding-left:.5rem;
+   padding-right:.5rem;
+   padding-bottom: 2rem;
 }
 
 .new-user {

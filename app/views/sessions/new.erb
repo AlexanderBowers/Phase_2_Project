@@ -1,5 +1,5 @@
 <div class="sessions-new">
-    <h1>Returning User Form</h1>
+    <h2>Login</h2>
     <% if flash[:errors] %>
         <% flash[:errors].each do |e| %>
             <p><%= e %></p>
@@ -12,8 +12,12 @@
         <%= text_field_tag :username, '', placeholder: "username" %>
         <%= text_field_tag :password, '', placeholder: "password" %>
 
-        <%= submit_tag %>
+        <%= submit_tag "Login" %>
     <% end %>
 
-    <%= link_to "sign_up", signup_url %>
+    <hr>
+
+    <div class="button">
+        <%= link_to "Sign Up", signup_url %>
+    </div>
 </div>
