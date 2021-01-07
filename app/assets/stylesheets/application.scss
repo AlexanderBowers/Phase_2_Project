@@ -17,6 +17,7 @@
 $icon-font-path: 'bootstrap/';
 @import "bootstrap";
 @import "bootstrap-sprockets";
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
 //general page styling
 body {
@@ -148,8 +149,9 @@ nav {
 
 .grid-item {
    text-align: center;
-
+   
    a {
+      
       text-decoration: none;
       padding: 15px 30px;
       color: white;
