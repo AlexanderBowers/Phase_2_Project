@@ -191,7 +191,7 @@ nav ul li a:visited {
    text-decoration: none;
 }
 
-.user-list .grid-item {
+#user-list .grid-item {
    text-align: center;
    background-color: whitesmoke;
    width: 150px;
@@ -199,12 +199,12 @@ nav ul li a:visited {
    padding: 1rem 0;
 }
 
-.user-list .grid-item img {
+#user-list .grid-item img {
    padding-left:.5rem;
    padding-right:.5rem;
    padding-bottom: 2rem;
 }
 
-.new-user {
+#new-user {
    width: 50%;
 }
