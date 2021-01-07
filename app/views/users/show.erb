@@ -43,7 +43,7 @@
       </ul>
    </div>
 
-   
+   <div class="user-data-stats">
    <h4>Statistics</h4>
    <ul>
       <li><%=@user.total_raids%></li>
@@ -53,11 +53,14 @@
       <li><%=@user.dps_count%></li>
       <li><%=@user.healer_count%></li>
    </ul>
+   </div>
 
+   <div class="user-data-drops">
    <h4>Notable drops:</h4>
    <ul>
       <% @user.inventory.each do |item| %>
          <li> <%= item %> </li>
       <% end %>
    </ul>
+   </div>
 </div>

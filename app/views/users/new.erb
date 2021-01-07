@@ -1,30 +1,31 @@
 <div class="new-user">
-    <h1>New User Form</h1>
+    <h2>New User Form</h2>
     <% if flash[:errors] %>
         <% flash[:errors].each do |e| %>
             <p><%= e %></p>
         <% end %>
     <% end %>
+    <div class="form">
+        <%= form_for @user do |f| %>
+            <%= f.label :username %>
+            <%= f.text_field :username %>
 
-    <%= form_for @user do |f| %>
-        <%= f.label :username %>
-        <%= f.text_field :username %>
+            <%= f.label :email%>
+            <%= f.email_field :email %>
 
-        <%= f.label :email%>
-        <%= f.email_field :email %>
+            <%= f.label :discord_id %>
+            <%= f.text_field :discord_id %>
 
-        <%= f.label :discord_id %>
-        <%= f.text_field :discord_id %>
+            <%= f.label :steam_id %>
+            <%= f.text_field :steam_id %>
 
-        <%= f.label :steam_id %>
-        <%= f.text_field :steam_id %>
+            <%= f.label :user_desc, "User Description" %>
+            <%= f.text_field :user_desc %>
 
-        <%= f.label :user_desc %>
-        <%= f.text_area :user_desc, size: "70x5" %>
+            <%= f.label :password %>
+            <%= f.text_field :password %>
 
-        <%= f.label :password %>
-        <%= f.text_field :password %>
-
-        <%= f.submit %>
-    <% end %>
+            <%= f.submit %>
+        <% end %>
+    </div>
 </div>
