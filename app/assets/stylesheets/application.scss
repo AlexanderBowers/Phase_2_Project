@@ -18,21 +18,23 @@ $icon-font-path: 'bootstrap/';
 @import "bootstrap";
 @import "bootstrap-sprockets";
 
+//general page styling
 body {
    margin: 0 auto;
    font-family: Arial;
 }
 
-.footer {
-   text-align: center;
-   position: absolute;
-   bottom: 0;
-   width: 100%;
-   padding: 1rem;
-}
-
 h1, h2, h3, h4, h5, h6 {
    text-align: center;
+}
+
+select {
+   width: 100%;
+}
+
+hr {
+   border-top: .25rem solid grey;
+   border-radius: 3px;
 }
 
 // form styling
@@ -60,86 +62,55 @@ input[type=submit] {
    display: block;
    margin: 0 auto;
    margin-top: 1.5rem;
-}
 
-input[type=submit]:hover {
-   background-color: grey;
+   &:hover {
+      background-color: grey;
+   }
 }
 
 input[type="checkbox"] {
    width: 5rem;
 }
 
-select {
-   width: 100%;
-}
-
-hr {
-   border-top: .25rem solid grey;
-   border-radius: 3px;
-}
-
-.button {
-   display: flex;
-   justify-content: center;
-}
-
-.button a {
-   background-color: #666666;
-   text-decoration: none;
-   color: white;
-   padding: 15px 30px;
-
-}
-
-.button a:hover {
-   color: white;
-   background-color: gray;
-}
-
-.button a:visited {
-   color: white;
-}
-
-
 // navbar styling
 nav {
    background-color: #666666;
+
+   ul {
+      top: 0;
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+         display: inline;
+
+         a {
+            display: block;
+            padding: 2rem 3rem;
+            text-decoration: none;
+            color: white;
+            font-size: large;
+
+            &:hover {
+               padding: 2rem 3rem;
+               color:white;
+               background-color: grey;
+               text-decoration: none;
+            }
+
+            &:visited {
+               color: white;
+               text-decoration: none;
+            }
+         }
+      }
+   }
 }
 
-nav ul {
-   top: 0;
-   display: flex;
-   justify-content: flex-end;
-   list-style: none;
-   margin: 0;
-   padding: 0;
-}
-
-nav ul li {
-   display: inline;
-}
-
-nav ul li a {
-   display: block;
-   padding: 2rem 3rem;
-   text-decoration: none;
-   color: white;
-   font-size: large;
-}
-
-nav ul li a:hover {
-   padding: 2rem 3rem;
-   color:white;
-   background-color: grey;
-   text-decoration: none;
-}
-
-nav ul li a:visited {
-   color: white;
-   text-decoration: none;
-}
-
+//class styling
 .flex-container {
    display: flex;
    flex-wrap: wrap;
@@ -149,14 +120,14 @@ nav ul li a:visited {
 .landing-page {
    width: 75%;
    text-align: center;
-}
 
-.landing-page h2 {
-   padding: 1.5rem;
-}
+   h2 {
+      padding: 1.5rem;
+   }
 
-.landing-page .info-section {
-   padding-top: 1.5rem;
+   .info-section {
+      padding-top: 1.5rem;
+   }
 }
 
 .carousel {
@@ -172,37 +143,67 @@ nav ul li a:visited {
 
 .grid-item {
    text-align: center;
+
+   a {
+      text-decoration: none;
+      padding: 15px 30px;
+      color: white;
+      background-color: #666666;
+      
+      &:hover {
+         color: white;
+         background-color: gray;
+         text-decoration: none;
+      }
+
+      &:visited {
+         text-decoration: none;         
+      }
+   }
 }
 
-.grid-item a {
-   text-decoration: none;
-   padding: 15px 30px;
-   color: white;
-   background-color: #666666;
+.button {
+   display: flex;
+   justify-content: center;
+
+   a {
+      background-color: #666666;
+      text-decoration: none;
+      color: white;
+      padding: 15px 30px;
+
+      &:hover{
+         color: white;
+         background-color: gray;
+      }
+
+      &:visited {
+         color: white;
+      }
+   }
 }
 
-.grid-item a:hover {
-   color: white;
-   background-color: gray;
-   text-decoration: none;
+.footer {
+   text-align: center;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   padding: 1rem;
 }
 
-.grid-item a:visited {
-   text-decoration: none;
-}
-
+// id styling
 #user-list .grid-item {
    text-align: center;
    background-color: whitesmoke;
    width: 150px;
    height: 215px;
    padding: 1rem 0;
-}
 
-#user-list .grid-item img {
-   padding-left:.5rem;
-   padding-right:.5rem;
-   padding-bottom: 2rem;
+   img {
+      padding-left:.5rem;
+      padding-right:.5rem;
+      padding-bottom: 2rem;
+   }
 }
 
 #new-user {
