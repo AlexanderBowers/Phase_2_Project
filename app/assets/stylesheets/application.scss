@@ -21,7 +21,7 @@ $icon-font-path: 'bootstrap/';
 //general page styling
 body {
    margin: 0 auto;
-   font-family: Arial;
+   font-family: 'Fira Sans', Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -75,7 +75,6 @@ input[type="checkbox"] {
 // navbar styling
 nav {
    background-color: #666666;
-
    ul {
       top: 0;
       display: flex;
@@ -125,9 +124,15 @@ nav {
       padding: 1.5rem;
    }
 
-   .info-section {
-      padding-top: 1.5rem;
-   }
+}
+
+.info-section {
+   margin-left: auto;
+   margin-right: auto;
+   width: 50%;
+
+   text-align: center;
+   padding-top: 1.5rem;
 }
 
 .carousel {
@@ -190,6 +195,7 @@ nav {
    width: 100%;
    padding: 1rem;
 }
+
 
 // id styling
 #user-list .grid-item {
