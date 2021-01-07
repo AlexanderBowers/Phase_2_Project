@@ -1,17 +1,44 @@
 <div class="user-show">
    <div class="user-data">
       <h2><%= @user.username %></h2>
-      <img src="<%= @user.pix_url %>">
+      <% if !@user.pix_url.nil? %>
+         <img src="<%= @user.pix_url %>">
+      <% else %>
+         <img src="<%= Faker::Avatar.image %>">
+      <% end %>
       <ul>
-         <li><%= "Email: " + @user.email.to_s %></li>
+         <% if !@user.email.nil? %>
+            <li>
+               <a href="mailto:<%= @user.email.to_s %>"><img src="/assets/email-icon.svg" width="50"> </a>
+               <%= "Email"%>
+            </li>
+         <% end %>
+         
+         <% if !@user.email.nil? %>
+            <li>
+               <a href="https://discordapp.com/users/<%= @user.discord_id %>"><img src="/assets/discord-icon.svg" width="50"></a>
+               <%= "Discord" %>
+            </li>
+         <% end %>
+         
+         <% if !@user.email.nil? %>
+            <li>
+               <a href="https://steamcommunity.com/id/<%= @user.steam_id %>"><img src="/assets/steam-icon.svg" width="50"></a>
+               <%= "Steam" %>
+            </li>
+         <% end %>
       </ul>
    </div>
 
    <div class="user-data-groups">
       <h4>Past Groups</h4>
       <ul>
-         <% @user.groups.each do |group| %>
-            <li> <%= group.name %> </li>
+         <% if @user.groups.count <= 0 %>
+            <li>None</li>
+         <% else %>
+            <% @user.groups.each do |group| %>
+               <li> <%= group.name %> </li>
+            <% end %>
          <% end %>
       </ul>
    </div>

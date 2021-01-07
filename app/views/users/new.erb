@@ -13,8 +13,14 @@
         <%= f.label :email%>
         <%= f.email_field :email %>
 
-        <%= f.label :discord_name %>
-        <%= f.text_field :discord_name %>
+        <%= f.label :discord_id %>
+        <%= f.text_field :discord_id %>
+
+        <%= f.label :steam_id %>
+        <%= f.text_field :steam_id %>
+
+        <%= f.label :user_desc %>
+        <%= f.text_area :user_desc, size: "70x5" %>
 
         <%= f.label :password %>
         <%= f.text_field :password %>
