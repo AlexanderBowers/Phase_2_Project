@@ -232,6 +232,10 @@ nav {
 
 
 // id styling
+#groups-list h3 {
+   padding: 1rem;
+}
+
 #user-list .grid-item {
    text-align: center;
    background-color: whitesmoke;
@@ -245,8 +249,6 @@ nav {
       padding-bottom: 2rem;
    }
 }
-
-
 
 #new-user {
    width: 50%;
