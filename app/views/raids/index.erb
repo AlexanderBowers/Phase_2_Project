@@ -10,7 +10,7 @@
 
    <div class="grid-container">
       <% @raids.each do |raid| %>
-         <div class="grid-item">
+         <div class="alt-grid-item">
             <%= link_to raid[:name], raid_path(raid) %>
          </div>
       <% end %>

@@ -43,7 +43,7 @@ class GroupsController < ApplicationController
         @group = Group.find(params[:id])
         @groups = Group.all
         @group.wipe(user_id: [:user_id])
-        redirect_to @groups
+        redirect_to "/groups"
     end
 
 

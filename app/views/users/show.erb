@@ -1,12 +1,12 @@
 <div id="user-show">
-   <div id="user-data">
+   <div class="side-1">
       <h2><%= @user.username %></h2>
       <% if !@user.pix_url.nil? %>
          <img src="<%= @user.pix_url %>">
       <% else %>
          <img src="<%= Faker::Avatar.image %>">
       <% end %>
-      <ul id="user-icons">
+      <ul class="icon-list">
          <% if !@user.email.nil? %>
             <li>
                <a href="mailto:<%= @user.email.to_s %>"><img src="/assets/email-icon.svg" width="50"> </a>
@@ -32,7 +32,7 @@
       <p><%= @user.user_desc %></p>
    </div>
 
-   <div id="user-data-stats">
+   <div class="side-2" id="user-data-stats">
       <h3>Previous Groups</h3>
       <div class="grid-header">
          <% if @user.groups.count <= 0 %>

@@ -1,59 +1,88 @@
 <div id="groups-show">
-    
-    <h2><%=@group.name%></h2>
-    <% if session[:user_id] == @group.party_leader.id %>
-        <%= link_to "Finalize Group", finalize_groups_path(id: @group.id) %>
-    <% end %>
-    
-    <% if session[:user_id] == @group.party_leader.id %>
-        <%= link_to "Destroy Group", wipe_groups_path(id: @group.id) %>
-    <% end %>
+    <div class="side-1" id="group-options">
+        <h2><%=@group.name%></h2>
 
-    <% if @group.finished == true %>
-        <%= "This group's tasks are finished." %>
-    <% end %>
+        <div class="grid-header">
+            <% if session[:user_id] == @group.party_leader.id %>
+                <div class="button grid-item"><%= link_to "Finalize Group", finalize_groups_path(id: @group.id) %></div>
+            <% end %>
+            
+            <% if session[:user_id] == @group.party_leader.id %>
+                <div class="button grid-item "><%= link_to "Destroy Group", wipe_groups_path(id: @group.id) %></div>
+            <% end %>
+        </div>
 
-    <% if @group.party_size.length < @group.limit %>
-        <%= button_to 'join as tank', {controller: "user_group_roles", action: "create", role_id: "1", user_id: session[:user_id], group_id: @group.id} %>
-        <%= button_to 'join as dps', {controller: "user_group_roles", action: "create", role_id: "2", user_id: session[:user_id], group_id: @group.id} %>
-        <%= button_to 'join as healer', {controller: "user_group_roles", action: "create", role_id: "3", user_id: session[:user_id], group_id: @group.id} %>
-    <% end %>
-    
-    <%= "Party leader is:" %> <strong> <%= "#{@group.party_leader.username}" %> </strong> 
-    
-    <strong><%= "#{@group.available_spots}" %></strong>
-
-    <p>Join Discord Server</p>
-    <a href="https://discord.gg/sJApeTZS"><img src="/assets/discord-icon.svg" width="50"></a>
-
-    <strong>This group will be tackling:</strong>
-    <ul>
-        <% @group.raids.each do |r| %>
-            <li><%= link_to r.name, r %></li>
+        <% if @group.finished == true %>
+            <h3><%= "This group's tasks are finished." %></h3>
         <% end %>
-    </ul>
 
-    <h4>Roles are: </h4>
-    <% if session[:user_id] == @group.party_leader.id %>
-        <ul>
-            <% @group.user_group_roles.each do |r| %>
-                <li><%= "#{r.role.name}:"%> <%=link_to r.user.username, user_path(r.user) %>
-                <%= link_to "remove user", decimate_user_group_roles_path(role_id: r.role.id, user_id: r.user.id, group_id: @group.id)%></li>
+        <hr>
+
+        <div  id="group-list">
+            <% if @group.party_size.length < @group.limit %>
+                <div class="button"><%= button_to 'join as tank', {controller: "user_group_roles", action: "create", role_id: "1", user_id: session[:user_id], group_id: @group.id} %></div>
+                <div class="button"><%= button_to 'join as dps', {controller: "user_group_roles", action: "create", role_id: "2", user_id: session[:user_id], group_id: @group.id} %></div>
+                <div class="button"><%= button_to 'join as healer', {controller: "user_group_roles", action: "create", role_id: "3", user_id: session[:user_id], group_id: @group.id} %></div>
+            <% end %>
+        </div>
+    </div>
+    
+    <div class="side-2" id="group-info">
+        <div id="groups-party-lead">
+            <h3><%= "Party leader is:" %> </h3>
+            <h4><strong> <%= "#{@group.party_leader.username}" %> </strong> </h4>
+        </div>
+
+        <div id="discord">
+            <a class="icon" href="https://discord.gg/sJApeTZS"><img src="/assets/discord-icon.svg" width="50"></a>
+            <h5>Discord Server</h5>
+        </div>
+
+        <h3>This group will be tackling:</h3>
+        <ul class="grid-header" id="group-raid-list">
+            <% @group.raids.each do |r| %>
+                <li class="alt-grid-item"><%= link_to r.name, r %></li>
             <% end %>
         </ul>
-    <% else %>
-        <ul>
-            <% @group.user_group_roles.each do |r| %>
-                <% if r.user.id == session[:user_id] %>
-                    <li>
-                        <%= "#{r.role.name}:"%> <%=link_to r.user.username, user_path(r.user) %>
-                        <%= link_to "leave group", decimate_user_group_roles_path(role_id: r.role.id, user_id: r.user.id, group_id: @group.id)%>
-                    </li>
-                <% else %>
-                    <li><%= "#{r.role.name}:"%> <%=link_to r.user.username, user_path(r.user) %>
+
+        <h5><%= "#{@group.available_spots}" %></h5>
+
+        <h3>Roles are: </h3>
+        
+        <% if session[:user_id] == @group.party_leader.id %>
+            <ul class="grid-container">
+                <% @group.user_group_roles.each do |r| %>
+                    <div class="alt-grid-item">
+                        <li>
+                            <h4><%= "#{r.role.name}"%></h4>
+                            <h5><%=link_to r.user.username, user_path(r.user) %></h5>
+                            <h5><%= link_to "Remove User", decimate_user_group_roles_path(role_id: r.role.id, user_id: r.user.id, group_id: @group.id)%></h5>
+                        </li>
+                    </div>
                 <% end %>
-            <% end %>
-        </ul>
-    <% end %>
-    <%=link_to "Logout", logout_path%>
+            </ul>
+        <% else %>
+            <ul class="grid-container">
+                <% @group.user_group_roles.each do |r| %>
+                    <% if r.user.id == session[:user_id] %>
+                        <div class="alt-grid-item">
+                            <li>
+                                <h4><%= "#{r.role.name}:"%></h4>
+                                <h5><%=link_to r.user.username, user_path(r.user)%></h5>
+                                <h5><%= link_to "Leave Group", decimate_user_group_roles_path(role_id: r.role.id, user_id: r.user.id, group_id: @group.id)%></h5>
+                            </li>
+                        </div>
+                    <% else %>
+                        <div class="alt-grid-item">
+                            <li>
+                                <h4><%= "#{r.role.name}:"%></h4>
+                                <h5><%=link_to r.user.username, user_path(r.user) %></h5>
+                            </li>
+                        </div>
+                    <% end %>
+                <% end %>
+            </ul>
+        <% end %>
+        
+    </div>
 </div>
