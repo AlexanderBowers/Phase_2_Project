@@ -10,21 +10,18 @@
          <% if !@user.email.nil? %>
             <li>
                <a href="mailto:<%= @user.email.to_s %>"><img src="/assets/email-icon.svg" width="50"> </a>
-               <%#= "Email"%>
             </li>
          <% end %>
          
          <% if !@user.email.nil? %>
             <li>
                <a href="https://discordapp.com/users/<%= @user.discord_id %>"><img src="/assets/discord-icon.svg" width="50"></a>
-               <%#= "Discord" %>
             </li>
          <% end %>
          
          <% if !@user.email.nil? %>
             <li>
                <a href="https://steamcommunity.com/id/<%= @user.steam_id %>"><img src="/assets/steam-icon.svg" width="50"></a>
-               <%#= "Steam" %>
             </li>
          <% end %>
       </ul>

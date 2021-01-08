@@ -1,19 +1,3 @@
-/*
-* This is a manifest file that'll be compiled into application.css, which will include all the files
-* listed below.
-*
-* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
-* vendor/assets/stylesheets directory can be referenced here using a relative path.
-*
-* You're free to add application-wide styles to this file and they'll appear at the bottom of the
-* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
-* files in this directory. Styles in this file should be added after the last require_* statement.
-* It is generally better to create a new file per style scope.
-*
-*= require_tree .
-*= require_self
-*/
-
 $icon-font-path: 'bootstrap/';
 @import "bootstrap";
 @import "bootstrap-sprockets";
@@ -25,7 +9,7 @@ body {
    font-family: 'Fira Sans', Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
    text-align: center;
 }
 
@@ -117,16 +101,6 @@ nav {
    justify-content: center;
 }
 
-.landing-page {
-   width: 75%;
-   text-align: center;
-
-   h2 {
-      padding: 1.5rem;
-   }
-
-}
-
 .info-section {
    margin-left: auto;
    margin-right: auto;
@@ -146,6 +120,7 @@ nav {
    justify-content: center;
    grid-template-columns: 14rem 14rem 14rem 14rem;
    grid-gap: 4rem;
+   padding-inline-start: 0 !important;
 
 }
 
@@ -154,6 +129,7 @@ nav {
    justify-content: center;
    grid-template-columns: 12rem 12rem;
    grid-gap: 2rem;
+   padding-inline-start: 0 !important;
 }
 
 .grid-item {
@@ -228,6 +204,7 @@ nav {
    justify-content: center;
    list-style: none;
    padding-top: 1rem;
+   padding-inline-start: 0 !important;
 
    li {
       padding: 1rem;
@@ -262,6 +239,14 @@ nav {
    padding: 1rem;
 }
 
+#user-list {
+   padding-top: 5rem;
+
+   h2 {
+      padding-bottom: 2rem;
+   }
+}
+
 #user-list .grid-item {
    text-align: center;
    background-color: whitesmoke;
@@ -281,12 +266,13 @@ nav {
 }
 
 #user-show {
+   padding-top: 5rem;
    display: flex;
    
 }
 
 #user-data-stats {
-   padding-top: 10rem;
+   padding-top: 5rem;
    
    ul {
       list-style: none;
@@ -295,6 +281,10 @@ nav {
    h3 {
       padding-top: 2rem;
    }
+}
+
+#groups-new {
+   padding-top: 5rem;
 }
 
 #groups-show {
@@ -322,7 +312,6 @@ nav {
 
          h4 {
             color: white;
-            // font-weight: bold;
             font-variant: small-caps;
          }
       }
@@ -332,6 +321,14 @@ nav {
 #group-options {
    padding-top: 8.5rem;
    padding-right: 5rem;
+}
+
+#groups-list {
+   padding-top: 5rem;
+
+   h2 {
+      padding-bottom: 2rem;
+   }
 }
 
 #group-list {
@@ -345,18 +342,51 @@ nav {
 #discord {
    .icon {
       padding-top: 1rem;
+      // VV bad practice but needed better spacing
       margin-bottom: -1rem;
    }
 }
 
-// #group-raid-list .grid-item
+#raids-list {
+   padding-top: 5rem;
 
+   h2 {
+      padding-bottom: 2rem;
+   }
+}
 
+#raids-show {
+   padding-top: 5rem;
 
+   .alt-grid-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      height: 100%;
+   }
+}
 
+#analytics {
+   padding-top: 5rem;
+   text-align: center;
+   ul {
+      list-style: none;
+      padding-inline-start: 0 !important;
+   }
+}
 
+#sessions-new {
+   padding-top: 5rem;
+}
 
+#landing-page {
+   width: 75%;
+   padding-top: 5rem;
+   text-align: center;
 
+   h2 {
+      padding: 2rem;
+   }
 
-
-
+}
